@@ -49,7 +49,7 @@ export default function Header(params) {
                 <div className="infos flex mr-8 cursor-pointer">
                     <HeaderDetail smalltext={"Sign in"} bigtext={"Account"} icon={<HiOutlineUser />} />
                     <HeaderDetail smalltext={""} bigtext={"Orders"} icon={<BiShoppingBag />} />
-                    <HeaderDetail smalltext={""} bigtext={"  Cart"} icon={<BiShoppingBag />} />
+                    <HeaderDetail smalltext={""} bigtext={"  Cart"} icon={<BsCart4 />} />
 
                 </div>
             </header>
@@ -95,7 +95,7 @@ export default function Header(params) {
                         <div className="flex justify-evenly w-4/6 items-center">
 
                             <div className="icon3 w-10 ">
-                                <BiShoppingBag />
+                                <HiOutlineUser />
                             </div>
                             <div>
                                 <p className="font-bold text-4xl text-white w-48 text-center"> Account </p>
@@ -117,7 +117,7 @@ export default function Header(params) {
                         <div className="flex justify-evenly w-4/6 items-center">
 
                             <div className="icon3  w-10">
-                                <BiShoppingBag />
+                                <BsCart4 />
                             </div>
                             <div>
                                 <p className="font-bold text-4xl text-white w-48 text-center"> Cart </p>
