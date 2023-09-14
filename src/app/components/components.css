@@ -109,7 +109,7 @@
         background-color: #174AC0;
         top: 0;
         width: 100%;
-        position: absolute;
+        position: fixed;
         z-index: 2;
         margin-left: 100%;
         transition: .3s;
