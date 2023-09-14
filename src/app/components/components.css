@@ -1,0 +1,177 @@
+.pcheader,
+.mobileheader {
+    background-color: #174AC0;
+    height: 7rem;
+    display: flex;
+    z-index: 4;
+    position: relative;
+}
+
+
+
+.mobileheader,
+.activephone {
+    display: none;
+}
+
+.search-bar input {
+    user-select: none;
+
+    height: 90%;
+    outline: none;
+    width: 100%;
+    padding-left: 0.5rem;
+    background-color: transparent;
+}
+
+.menublock {
+    display: none;
+}
+
+.icon svg {
+    font-weight: 900;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.icon2 svg {
+    font-weight: 900;
+    height: 2rem;
+    width: 2rem;
+}
+
+.phone-search {
+    display: none;
+}
+
+.icon {
+    background-color: #FFC120;
+    color: white;
+    padding: .5rem;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.icon2 {
+    color: white;
+    font-weight: 900;
+}
+
+.icon {
+    z-index: 4;
+    position: relative;
+}
+
+
+
+@media screen and (max-width:1000px) {
+
+    .phone-search {
+        display: block;
+        opacity: 0;
+        z-index: -1;
+        background-color: #174AC0;
+        transition: .3s;
+        margin-top: -45%;
+        padding: 1rem 0rem;
+
+    }
+
+    .icon3 {
+        color: white;
+    }
+
+    .icon3 svg {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .menubutton {
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: auto;
+        display: flex;
+        margin-bottom: 10vh;
+        max-width: 80%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        padding: 1rem 0rem;
+    }
+
+
+    body {
+        overflow-x: hidden;
+
+    }
+
+    .menublock {
+        min-height: 100vh;
+        background-color: #174AC0;
+        top: 0;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+        margin-left: 100%;
+        transition: .3s;
+        padding-top: 10rem;
+        display: block;
+
+    }
+
+    .activemenublock {
+        padding-top: 10rem;
+        transition: .3s;
+
+        opacity: 1;
+        margin-left: 0%;
+
+        display: block;
+    }
+
+    .activephone {
+        display: block;
+        z-index: 1;
+        background-color: #174AC0;
+        transition: .3s;
+        padding: 1rem 0rem;
+        margin-top: 0%;
+
+        opacity: 1;
+
+    }
+
+
+
+    .pcheader {
+        display: none;
+
+    }
+
+    .mobileheader {
+        display: flex;
+    }
+
+    .icon svg {
+        stroke-width: 55;
+        font-weight: 900;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .text {
+        margin-left: 1.75rem;
+    }
+
+
+
+}
+
+@media screen and (max-width:300px) {
+    .headline {
+        display: none;
+    }
+
+    .text {
+        margin-left: 0.5rem;
+    }
+}
