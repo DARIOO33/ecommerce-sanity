@@ -36,7 +36,7 @@ export default function Scroll(params) {
 
             }
 
-            <div onClick={() => scrollL()}>
+            <div className="right" onClick={() => scrollL()}>
                 <BsFillArrowRightCircleFill />
             </div>
 

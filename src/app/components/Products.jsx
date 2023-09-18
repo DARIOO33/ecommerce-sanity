@@ -8,9 +8,12 @@ export default async function Products(params) {
 
     return (
         <>
-
-            <Scroll />
-            <div className="catalog-container   px-8">
+            {products.length > 0 ?
+                <Scroll />
+                :
+                <div></div>
+            }
+            <div className="catalog-container  mt-10 px-8">
                 {products.map((product => (
                     <Product
                         key={product.id}

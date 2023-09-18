@@ -30,6 +30,7 @@
 
 .buttons-container svg {
     height: 3rem;
+    position: absolute;
     width: 3rem;
     fill: #174AC0;
     cursor: pointer;
@@ -49,7 +50,6 @@
 
 .button button {
     transition: 1s;
-
     font-weight: 500;
     border: 0.15rem solid rgb(52, 50, 160);
 }
@@ -75,12 +75,16 @@
 
     /* background-color: green; */
     display: flex;
-    left: 1rem;
     /* height: 24rem; */
 
     /* width: 80rem; */
     align-items: center;
     justify-content: space-between;
+}
+
+.right {
+    position: relative;
+    right: 2rem;
 }
 
 .buttons-container svg {
