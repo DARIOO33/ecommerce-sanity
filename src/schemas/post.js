@@ -1,7 +1,7 @@
 import { defineField } from "sanity";
 
 
-const product_post = {
+const post = {
     name: "product_post",
     title: "product post",
     type: "document",
@@ -26,7 +26,7 @@ const product_post = {
             description: "Add your product image links:",
             fields: [
                 {
-                    name: "github",
+                    name: "image1",
                     title: "Image 1",
                     type: "url",
                     initialValue: "https://res.cloudinary.com/",
@@ -34,7 +34,7 @@ const product_post = {
 
                 },
                 {
-                    name: "linkedin",
+                    name: "image2",
                     title: "Image 2",
                     type: "url",
                     initialValue: "https://res.cloudinary.com/",
@@ -42,7 +42,7 @@ const product_post = {
 
                 },
                 {
-                    name: "twitter",
+                    name: "image3",
                     title: "Image 3",
                     type: "url",
                     initialValue: "https://res.cloudinary.com/",
@@ -62,21 +62,41 @@ const product_post = {
             validation: (rule) => rule.required(),
         }),
         defineField({
-            title: 'Categorie',
+            title: 'categorie',
             name: 'categorie',
             type: 'string',
-            initialValue: 'electronics',
+            initialValue: ' ',
+            validation: (rule) => rule.required(),
             options: {
                 list: [
                     { title: 'electronics', value: 'Electronics' },
                     { title: 'sport', value: 'Sport' },
                     { title: 'fashion', value: 'Fashion' },
                     { title: 'accessories', value: 'Accessories' },
-                ], // <-- predefined values
-                //layout: 'radio' // <-- defaults to 'dropdown'
+
+                ],
             }
         }),
+        defineField({
+            title: 'discount',
+            name: 'discount',
+            type: 'string',
+            initialValue: '0%',
+            validation: (rule) => rule.required(),
+            options: {
+                list: [
+                    { title: '0%', value: '0%' },
+                    { title: '5%', value: '5%' },
+                    { title: '10%', value: '10%' },
+                    { title: '15%', value: '15%' },
+                    { title: '20%', value: '20%' },
+                    { title: '30%', value: '30%' },
+                    { title: '40%', value: '40%' },
+                    { title: '50%', value: '50%' },
+                ],
+            }
+        })
     ],
 };
 
-export default product_post;
+export default post;
