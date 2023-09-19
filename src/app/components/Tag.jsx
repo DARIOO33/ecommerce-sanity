@@ -5,11 +5,11 @@ export default function Tag({ text, bg, percent }) {
 
             {
                 percent ?
-                    <div style={{ backgroundColor: bg }} className="shape py-1 px-4 text-sm mr-2">
+                    <div style={{ backgroundColor: bg }} className="shape py-1 px-4  mr-2">
                         {text} {percent} %
                     </div>
                     :
-                    <div style={{ backgroundColor: bg }} className="shape py-1 px-4 text-sm mr-2">
+                    <div style={{ backgroundColor: bg }} className="shape py-1 px-4  mr-2">
                         {text} {percent}
                     </div>
 

@@ -9,14 +9,31 @@
 body {}
 
 .content {
-    padding: 1rem;
+    padding: 1rem 2rem;
     max-width: 80rem;
     margin: auto;
 }
 
 @media screen and (max-width:1000px) {
     .content {
+        width: 100%;
+        padding: 1rem 2rem;
 
-        width: 90%;
     }
+
+    .brands {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    .brands img {
+        margin-top: 2rem;
+    }
+
+    .brands img:last-child {
+        margin-top: 0rem;
+    }
+
 }
