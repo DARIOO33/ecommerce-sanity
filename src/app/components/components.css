@@ -4,7 +4,6 @@
     height: 7rem;
     display: flex;
     z-index: 4;
-    /* position: relative; */
 }
 
 .product-title span {

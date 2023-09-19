@@ -23,10 +23,9 @@ export default function Header(params) {
 
     }
     const activeMenuClick = () => {
-
+        document.querySelector('.mobileheader').classList.toggle("fixed")
+        document.querySelector('.mobileheader').classList.toggle("w-full")
         setActive(false)
-
-
         setActiveMenu(!activeMenu);
 
     }
