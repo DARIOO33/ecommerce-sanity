@@ -1,7 +1,11 @@
+"use client"
+import { useRouter } from "next/navigation"
 import "./components.css"
 import Tag from "./Tag"
 import Image from "next/image"
-export default function Product({ imageUrl, ProductName, price, discount }) {
+export default function Product({ id, imageUrl, ProductName, price, discount }) {
+    const router = useRouter()
+    console.log(id);
     let discountNumber;
     discount.length > 2 ? discountNumber = discount.substr(0, 2) : discountNumber = discount.substr(0, 1)
     return (
@@ -16,8 +20,8 @@ export default function Product({ imageUrl, ProductName, price, discount }) {
                         height={200}
                     />
                 </div>
-                <div className="product-title mt-2 text-lg font-bold w-11/12 ">
-                    <span className="cursor-pointer">
+                <div className="product-title mt-2 text-lg font-bold w-11/12 " onClick={() => router.push("/product?id=" + id)}>
+                    <span className="cursor-pointer" >
                         {ProductName}
                     </span>
                 </div>
@@ -40,7 +44,7 @@ export default function Product({ imageUrl, ProductName, price, discount }) {
                 <div className="details flex items-center mt-2">
                     <div className="priceandshipping w-1/2">
                         <div className="price text-xl font-bold">
-                            ${price}
+                            ${price.toFixed(2)}
                         </div>
                         <div className="shippinh text-sm text-blue-800 font-bold">
                             FREE SHIPPING

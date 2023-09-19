@@ -1,11 +1,13 @@
 import Image from 'next/image'
-import TopOffers from './components/TopOffers'
+import Offers from './components/Offers'
 
 export default async function Home() {
 
   return (
     <>
-      <TopOffers />
+      <Offers type={"Top Offers"} />
+      <Offers type={"Weekly deals"} />
+
     </>
   )
 }
