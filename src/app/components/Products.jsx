@@ -32,7 +32,7 @@ export default async function Products({ type }) {
                 :
                 <div></div>
             }
-            <div className="catalog-container  mt-10 px-8 pb-6">
+            <div className="catalog-container  mt-10  pb-6">
                 {filtredProducts.map((product => (
                     <Product
                         key={product._id}

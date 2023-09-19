@@ -20,7 +20,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         height={200}
                     />
                 </div>
-                <div className="product-title mt-2 text-lg font-bold w-11/12 " onClick={() => router.push("/product?id=" + id)}>
+                <div className="product-title mt-2 laptop:text-lg mobile:text-sm font-bold w-11/12 " onClick={() => router.push("/product?id=" + id)}>
                     <span className="cursor-pointer" >
                         {ProductName}
                     </span>
@@ -43,15 +43,15 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                 </div>
                 <div className="details flex items-center mt-2">
                     <div className="priceandshipping w-1/2">
-                        <div className="price text-xl font-bold">
+                        <div className="price laptop:text-xl mobile:text-sm font-bold">
                             ${price.toFixed(2)}
                         </div>
-                        <div className="shippinh text-sm text-blue-800 font-bold">
+                        <div className="shipping  text-blue-800 font-bold">
                             FREE SHIPPING
                         </div>
                     </div>
                     <div className="button">
-                        <button className="rounded-full text-xl mt-2 px-4 py-1 slide text-blue-800 cursor-pointer">
+                        <button className="rounded-full laptop:text-xl mobile:text-xs mt-2   slide text-blue-800 cursor-pointer">
                             See Details
                         </button>
                     </div>

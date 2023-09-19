@@ -16,9 +16,8 @@ body {}
 
 @media screen and (max-width:1000px) {
     .content {
-        width: 100%;
-        padding: 1rem 2rem;
-
+        max-width: 100%;
+        padding: 1rem;
     }
 
     .brands {

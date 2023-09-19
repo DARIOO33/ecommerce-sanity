@@ -57,6 +57,7 @@
 .button button {
     transition: 1s;
     font-weight: 500;
+    padding: 0rem 1rem;
     border: 0.15rem solid rgb(52, 50, 160);
 }
 
@@ -221,6 +222,12 @@
         color: white;
     }
 
+    .shape {
+        font-size: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        transform: none;
+    }
+
     .icon3 svg {
         width: 3rem;
         height: 3rem;
@@ -287,6 +294,12 @@
 
     }
 
+    .button button {
+        padding: 0;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+    }
+
     .mobileheader {
         display: flex;
     }
@@ -302,13 +315,25 @@
         margin-left: 1.75rem;
     }
 
+    .shipping {
+        font-size: 0.5rem;
+    }
+
     .catalog-container {
-        overflow-x: auto;
+        width: 100%;
+        padding: 0;
+        margin: auto;
+        margin-top: 1rem;
+        padding-bottom: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
     }
 
     .card {
         cursor: default;
-        width: 18rem;
+        width: 40vw;
+        margin-top: 2rem;
+
         /* display: flex; */
         /* flex-direction: column; */
         height: 100%;
@@ -316,7 +341,7 @@
 
     .product-image {
         border-radius: 0.5rem;
-        height: 12.5rem;
+        height: 20vh;
 
     }
 
