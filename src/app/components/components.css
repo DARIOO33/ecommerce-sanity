@@ -330,9 +330,13 @@
     }
 
     .card {
+        /* background-color: red; */
+
         cursor: default;
         width: 40vw;
-        margin-top: 2rem;
+        margin: auto;
+        margin-bottom: 2rem;
+
 
         /* display: flex; */
         /* flex-direction: column; */
@@ -343,6 +347,15 @@
         border-radius: 0.5rem;
         height: 20vh;
 
+    }
+
+    .button {
+        /* width: 100%; */
+    }
+
+    .details {
+        justify-content: space-between;
+        width: 100%;
     }
 
     .Top {

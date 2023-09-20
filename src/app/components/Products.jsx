@@ -5,8 +5,6 @@ import { getPosts } from "@/sanity/sanity.query";
 
 export default async function Products({ type }) {
     const products = await getPosts();
-    console.log(products);
-    console.log(type);
     let filtredProducts = [];
     function percentToInt(discount) {
         if (discount == "") return 0

@@ -1,21 +1,34 @@
 "use client"
 import HeaderDetail from "./HeaderDetail";
 import "./components.css"
+import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import { HiOutlineUser } from "react-icons/hi2";
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { BsCart4 } from "react-icons/bs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import { useSearchParams } from 'next/navigation'
+
 export default function Header(params) {
     const [searchinput, setSearchinput] = useState("")
     const [active, setActive] = useState(false)
     const [activeMenu, setActiveMenu] = useState(false)
     const router = useRouter()
     const pathname = usePathname()
+    const searchParams = useSearchParams()
+    let search = searchParams.get('keyword') || ""
+    useEffect(() => {
+        search.length > 0 ?
+            setSearchinput(search)
+            :
+            setSearchinput("")
+
+
+    }, [search])
     const activeClick = () => {
         setActiveMenu(false);
 
@@ -43,7 +56,12 @@ export default function Header(params) {
                 <div>
 
                     <header className="pcheader justify-between items-center">
-                        <div className="title text-4xl text-white font-bold cursor-pointer w-2/12 text-center">FlexStar</div>
+
+                        <div className="title text-4xl text-white font-bold cursor-pointer w-2/12 text-center">
+                            <Link href={"/"}>
+                                FlexStar
+                            </Link>
+                        </div>
                         <div className="search-bar w-5/12 bg-white h-14 flex items-center rounded-full px-4 justify-between" >
 
                             <input className="text-lg  font-normal " maxLength={35} type="text" placeholder="Search everything at FlexStar" value={searchinput} onChange={(e) => setSearchinput(e.target.value)} />

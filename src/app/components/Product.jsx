@@ -5,7 +5,6 @@ import Tag from "./Tag"
 import Image from "next/image"
 export default function Product({ id, imageUrl, ProductName, price, discount }) {
     const router = useRouter()
-    console.log(id);
     let discountNumber;
     discount.length > 2 ? discountNumber = discount.substr(0, 2) : discountNumber = discount.substr(0, 1)
     return (
