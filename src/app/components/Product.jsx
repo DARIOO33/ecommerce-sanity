@@ -13,7 +13,9 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
             <div className="card mr-8">
                 <div className="product-image bg-gray-200 w-full flex justify-center ">
                     <Image
+                        onClick={() => router.push("/product?id=" + id)}
                         alt=""
+                        className=" cursor-pointer"
                         src={imageUrl}
                         width={200}
                         height={200}
@@ -50,7 +52,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         </div>
                     </div>
                     <div className="button">
-                        <button className="rounded-full laptop:text-xl mobile:text-xs mt-2   slide text-blue-800 cursor-pointer">
+                        <button className="rounded-full laptop:text-xl mobile:text-xs mt-2   slide text-blue-800 cursor-pointer" onClick={() => router.push("/product?id=" + id)}>
                             See Details
                         </button>
                     </div>
