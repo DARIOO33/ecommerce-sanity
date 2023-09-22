@@ -61,7 +61,7 @@
     }
 
     .product-images {
-        width: 80%;
+        width: 100%;
         margin: auto;
         height: 20rem;
     }
@@ -73,7 +73,7 @@
     }
 
     .pr-details {
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
 }

@@ -1,6 +1,7 @@
 import { getPosts } from "@/sanity/sanity.query";
 import "./product.css"
 import Tag from "@/app/components/Tag"
+import ProductImage from "./ProductImage";
 
 export default async function page(params) {
     const products = await getPosts();
@@ -18,15 +19,7 @@ export default async function page(params) {
         <div>
             {currectProduct.map((product => (
                 <div key={product._id} className="product-container">
-                    <div className="product-images">
-                        <div className="product-img">
-                            <img src={product.imageLink.image1} />
-                        </div>
-                        <div className="images-c flex">
-                            <img src={product.imageLink.image1} />
-                            <img src={product.imageLink.image2} />
-                        </div>
-                    </div>
+                    <ProductImage image1={product.imageLink.image1} image2={product.imageLink.image2} />
                     <div className="pr-details">
                         <h1 className="text-3xl font-bold">{product.product_name}</h1>
                         <div className="mt-2">
