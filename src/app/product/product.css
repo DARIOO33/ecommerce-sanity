@@ -54,3 +54,26 @@
     margin: auto;
     object-fit: contain;
 }
+
+@media screen and (max-width:1000px) {
+    .product-container {
+        display: block;
+    }
+
+    .product-images {
+        width: 80%;
+        margin: auto;
+        height: 20rem;
+    }
+
+    .product-img img {
+
+        height: 15rem;
+
+    }
+
+    .pr-details {
+        width: 90%;
+        margin: auto;
+    }
+}

@@ -40,18 +40,18 @@ export default async function page(params) {
                             }
                         </div>
                         <p className=" font-semibold mt-2 text-black">{product.product_desription}</p>
-                        <div className="flex items-center justify-evenly mt-4">
+                        <div className="laptop:flex w-full m-auto text-center mobile:block items-center justify-evenly mt-4">
                             <div>
 
-                                <div className="price laptop:text-2xl mt-1 mobile:text-sm font-bold">
+                                <div className="mobile:mt-3 price laptop:text-2xl mt-1 mobile:text-3xl font-bold">
                                     ${(product.product_price).toFixed(2)}
                                 </div>
-                                <div className="shipping text-lg mt-1 text-blue-800 font-bold">
+                                <div className="mobile:mt-3 shipping laptop:text-lg mobile:text-lg mt-1 text-blue-800 font-bold">
                                     FREE SHIPPING
                                 </div>
                             </div>
-                            <div className="buttonn">
-                                <button className="rounded-full laptop:text-2xl mobile:text-xs  px-4 py-1 font-semibold slide text-blue-800 cursor-pointer">
+                            <div className="mobile:mt-4 buttonn">
+                                <button className="rounded-full laptop:text-2xl mobile:text-xl  px-4 py-1 font-semibold slide text-blue-800 cursor-pointer">
                                     Buy Now
                                 </button>
                             </div>
