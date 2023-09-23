@@ -44,6 +44,7 @@ export default function Header(params) {
     }
     const searchClick = () => {
         if (searchinput) {
+
             router.push(`/search?keyword=${searchinput}`)
         }
         else {
@@ -71,7 +72,7 @@ export default function Header(params) {
                         <div className="infos flex mr-8 cursor-pointer">
                             <HeaderDetail smalltext={"Sign in"} bigtext={"Account"} icon={<HiOutlineUser />} />
                             <HeaderDetail smalltext={""} bigtext={"Orders"} icon={<BiShoppingBag />} />
-                            <HeaderDetail smalltext={""} bigtext={"  Cart"} icon={<BsCart4 />} />
+                            <HeaderDetail smalltext={""} bigtext={"Cart"} icon={<BsCart4 />} />
 
                         </div>
                     </header>
@@ -132,7 +133,10 @@ export default function Header(params) {
                                         <BiShoppingBag />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-4xl text-white w-48 text-center"> Orders </p>
+                                        <a href="/orders">
+
+                                            <p className="font-bold text-4xl text-white w-48 text-center"> Orders </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>  <div className="menubutton">

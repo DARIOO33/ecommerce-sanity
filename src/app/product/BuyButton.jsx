@@ -12,7 +12,7 @@ export default function BuyButton({ id, name, description, price, category, imag
             price: price,
             category: category,
             discount: discount,
-            image: { image }
+            image: image
         })
     }
     return (
