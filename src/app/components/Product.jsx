@@ -12,6 +12,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
 
             <div className="card mr-8">
                 <div className="product-image bg-gray-200 w-full flex justify-center ">
+
                     <Image
                         onClick={() => router.push("/product?id=" + id)}
                         alt=""
@@ -20,11 +21,15 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         width={200}
                         height={200}
                     />
+
                 </div>
-                <div className="product-title mt-2 laptop:text-lg mobile:text-sm font-bold w-11/12 " onClick={() => router.push("/product?id=" + id)}>
-                    <span className="cursor-pointer" >
-                        {ProductName}
-                    </span>
+                <div className="product-title mt-2 laptop:text-lg mobile:text-sm font-bold w-11/12 " >
+                    <a href={("/product?id=" + id)}>
+
+                        <span className="cursor-pointer" >
+                            {ProductName}
+                        </span>
+                    </a>
                 </div>
                 <div className="tags mt-1 flex ">
                     {discount.length > 1
@@ -52,9 +57,13 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         </div>
                     </div>
                     <div className="button">
-                        <button className="rounded-full laptop:text-xl mobile:text-xs mt-2   slide text-blue-800 cursor-pointer" onClick={() => router.push("/product?id=" + id)}>
-                            See Details
-                        </button>
+                        <a href={("/product?id=" + id)}>
+
+                            <button className="rounded-full laptop:text-xl mobile:text-xs mt-2   slide text-blue-800 cursor-pointer" >
+                                See Details
+                            </button>
+                        </a>
+
                     </div>
                 </div>
             </div>
