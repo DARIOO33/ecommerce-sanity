@@ -58,7 +58,7 @@ export default function Header(params) {
                     <header className="pcheader justify-between items-center">
 
                         <div className="title text-4xl text-white font-bold cursor-pointer w-2/12 text-center">
-                            <Link href={"/"}>
+                            <Link href={"//"}>
                                 FlexStar
                             </Link>
                         </div>
