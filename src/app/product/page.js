@@ -2,6 +2,7 @@ import { getPosts } from "@/sanity/sanity.query";
 import "./product.css"
 import Tag from "@/app/components/Tag"
 import ProductImage from "./ProductImage";
+import BuyButton from "./BuyButton";
 
 export default async function page(params) {
     const products = await getPosts();
@@ -43,11 +44,15 @@ export default async function page(params) {
                                     FREE SHIPPING
                                 </div>
                             </div>
-                            <div className="mobile:mt-4 buttonn">
-                                <button className="rounded-full laptop:text-2xl mobile:text-xl  px-4 py-1 font-semibold slide text-blue-800 cursor-pointer">
-                                    Buy Now
-                                </button>
-                            </div>
+                            <BuyButton
+                                id={product._id}
+                                name={product.product_name}
+                                description={product.product_desription}
+                                price={product.product_price}
+                                category={product.categorie}
+                                image={product.imageLink.image1}
+                                discount={product.discount}
+                            />
                         </div>
                     </div>
 

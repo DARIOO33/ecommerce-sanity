@@ -3,6 +3,7 @@
     padding-top: 2rem;
 }
 
+
 .product-images {
     border: 0.1rem solid black;
     border-radius: 0.5rem;
@@ -47,13 +48,25 @@
 
 }
 
-.product-img img {
+
+
+.product-img>img {
     width: auto;
     padding: 1rem 0rem;
-    height: 20rem;
+    height: 100%;
     margin: auto;
+    height: 20rem;
     object-fit: contain;
+    object-position: center;
 }
+
+.product-img>.loading {
+    transition: opacity .5s ease-in-out;
+
+}
+
+
+
 
 @media screen and (max-width:1000px) {
     .product-container {
