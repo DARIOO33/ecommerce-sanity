@@ -36,10 +36,10 @@ export default async function page(params) {
                             }
                         </div>
                         <p className=" font-semibold mt-2 text-black">{product.product_desription}</p>
-                        <div className="laptop:flex w-full m-auto text-center mobile:block items-center justify-evenly mt-4">
+                        <div className=" w-full m-auto text-center mobile:block items-center justify-evenly mt-6">
                             <div>
 
-                                <div className="mobile:mt-3 price laptop:text-2xl mt-1 mobile:text-3xl font-bold">
+                                <div className="mobile:mt-3 price laptop:text-2xl mt-1 mobile:text-4xl font-bold">
                                     ${(product.product_price).toFixed(2)}
                                 </div>
                                 {/* <div className="mobile:mt-3 shipping laptop:text-lg mobile:text-lg mt-1 text-blue-800 font-bold">
@@ -47,6 +47,7 @@ export default async function page(params) {
                                 </div> */}
                             </div>
                             <BuyButton
+
                                 id={product._id}
                                 name={product.product_name}
                                 description={product.product_desription}

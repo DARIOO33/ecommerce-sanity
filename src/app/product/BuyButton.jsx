@@ -16,7 +16,7 @@ export default function BuyButton({ id, name, description, price, category, imag
         })
     }
     return (
-        <div className="mobile:mt-4 buttonn">
+        <div className="mobile:mt-4 py-2 buttonn">
             <button className="rounded-full laptop:text-2xl mobile:text-xl  px-4 py-1 font-semibold slide text-blue-800 cursor-pointer" onClick={() => addToCartHandler()}>
                 Buy Now
             </button>
