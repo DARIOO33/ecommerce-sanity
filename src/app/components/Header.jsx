@@ -59,9 +59,9 @@ export default function Header(params) {
                     <header className="pcheader justify-between items-center">
 
                         <div className="title text-4xl text-white font-bold cursor-pointer w-2/12 text-center">
-                            <a href={"/"}>
+                            <Link href={"/"}>
                                 FlexStar
-                            </a>
+                            </Link>
                         </div>
                         <div className="search-bar w-5/12 bg-white h-14 flex items-center rounded-full px-4 justify-between" >
 
@@ -78,8 +78,9 @@ export default function Header(params) {
                     </header>
                     <header className="mobileheader items-center justify-between">
                         <div className="text ">
-
-                            <div className="title text-4xl text-white font-bold cursor-pointer w-2/12 text-center">FlexStar</div>
+                            <Link href={"/"}>
+                                <div className="title text-4xl text-white font-bold cursor-pointer w-2/12 text-center">FlexStar</div>
+                            </Link>
                             <p className="text-white font-light headline">Search everything at FlexStar</p>
                         </div>
                         <div className="icons mr-6 flex ">
