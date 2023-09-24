@@ -54,15 +54,22 @@ export const CartProvider = ({ children }) => {
         if (isItemExist) {
             newCartItems = cart.cartItems.map((i) =>
                 i.product_id === isItemExist.product_id ? item : i
+
             )
+            localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }))
+            setCartToState()
+
+
 
         }
         else {
             newCartItems = [...(cart?.cartItems || []), item]
+            localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }))
+            setCartToState()
+
+
 
         }
-        localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }))
-        setCartToState()
 
     }
 
