@@ -42,9 +42,9 @@ export default async function page(params) {
                                 <div className="mobile:mt-3 price laptop:text-2xl mt-1 mobile:text-3xl font-bold">
                                     ${(product.product_price).toFixed(2)}
                                 </div>
-                                <div className="mobile:mt-3 shipping laptop:text-lg mobile:text-lg mt-1 text-blue-800 font-bold">
+                                {/* <div className="mobile:mt-3 shipping laptop:text-lg mobile:text-lg mt-1 text-blue-800 font-bold">
                                     FREE SHIPPING
-                                </div>
+                                </div> */}
                             </div>
                             <BuyButton
                                 id={product._id}
@@ -76,7 +76,6 @@ export async function generateMetadata(params) {
     console.log("NOW");
 
     return {
-
         title: pname,
     }
 }
