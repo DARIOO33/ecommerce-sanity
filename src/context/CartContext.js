@@ -45,31 +45,28 @@ export const CartProvider = ({ children }) => {
             quantity
         }
 
+        const existingCartItemsJSON = localStorage.getItem("cart");
+        const existingCartItems = existingCartItemsJSON
+            ? JSON.parse(existingCartItemsJSON).cartItems
+            : [];
 
-        const isItemExist = cart?.cartItems?.find(
-            (i) => i.product_id === item.product_id
-        )
+        // Check if the product is already in the cart
+        const isItemExist = existingCartItems.find((i) => i.product_id === product_id);
+
 
         let newCartItems;
         if (isItemExist) {
-            newCartItems = cart.cartItems.map((i) =>
-                i.product_id === isItemExist.product_id ? item : i
-
+            newCartItems = existingCartItems.map((i) =>
+                i.product_id === isItemExist.product_id ? { ...i, quantity: i.quantity + quantity } : i
             )
-            localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }))
-            setCartToState()
-
-
 
         }
         else {
-            newCartItems = [...(cart?.cartItems || []), item]
-            localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }))
-            setCartToState()
-
-
+            newCartItems = [...existingCartItems, { product_id, name, description, category, price, image, discount, quantity }];
 
         }
+        localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }))
+        setCartToState()
 
     }
 
