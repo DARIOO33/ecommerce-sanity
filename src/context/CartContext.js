@@ -72,11 +72,41 @@ export const CartProvider = ({ children }) => {
         setCartToState()
     }
 
+    const addQuantity = (id) => {
+        // Retrieve the cart from local storage
+        const storedCart = JSON.parse(localStorage.getItem("cart")) || { cartItems: [] };
+
+        // Find the index of the item with the given id in the cart
+        const itemIndex = storedCart.cartItems.findIndex((item) => item.product_id === id);
+        if (itemIndex !== -1) {
+            storedCart.cartItems[itemIndex].quantity += 1;
+        } else {
+            storedCart.cartItems.push({ product_id: id, quantity: 1 });
+        }
+        localStorage.setItem("cart", JSON.stringify(storedCart));
+        setCartToState();
+    }
+    const removeQuantity = (id) => {
+        // Retrieve the cart from local storage
+        const storedCart = JSON.parse(localStorage.getItem("cart")) || { cartItems: [] };
+
+        // Find the index of the item with the given id in the cart
+        const itemIndex = storedCart.cartItems.findIndex((item) => item.product_id === id);
+        if (itemIndex !== -1) {
+            storedCart.cartItems[itemIndex].quantity -= 1;
+        } else {
+            storedCart.cartItems.push({ product_id: id, quantity: 1 });
+        }
+        localStorage.setItem("cart", JSON.stringify(storedCart));
+        setCartToState();
+    }
     return <CartContext.Provider
         value={{
             cart,
             addItemToCart,
             deleteItemFromCart,
+            addQuantity,
+            removeQuantity,
         }}
     >
         {children}

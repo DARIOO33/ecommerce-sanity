@@ -6,7 +6,7 @@ import "./orders.css"
 
 
 export default function Items(params) {
-    const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext)
+    const { addItemToCart, deleteItemFromCart, cart, addQuantity, removeQuantity } = useContext(CartContext)
     function optimiseYourImage(imageurl, size) {
         const firstPartOfUrl = imageurl.substr(0, 50)
         const parameters = "ar_1.0,c_limit,h_" + size + "/"
@@ -48,9 +48,9 @@ export default function Items(params) {
                     <div className="quantity laptop:w-3/12 mobile:w-full text-center">
 
                         <div className="flex w-1/2 h-4/5 m-auto justify-evenly items-center">
-                            <p className="font-bold cursor-pointer text-xl "  >-</p>
+                            <p className="font-bold cursor-pointer text-xl " onClick={() => removeQuantity(order.product_id)}>-</p>
                             <p className=" outline-3 px-3 py-1 outline outline-slate-200 ">{order.quantity}</p>
-                            <p className="font-bold cursor-pointer text-xl" >+</p>
+                            <p className="font-bold cursor-pointer text-xl" onClick={() => addQuantity(order.product_id)}>+</p>
                         </div>
                     </div>
                     <div className="price laptop:w-2/12 mobile:w-full mobile:py-4 laptop:py-0 laptop:text-left ">
