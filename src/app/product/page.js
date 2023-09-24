@@ -4,21 +4,23 @@ import Tag from "@/app/components/Tag"
 import ProductImage from "./ProductImage";
 import BuyButton from "./BuyButton";
 
+
+
 export default async function page(params) {
     const products = await getPosts();
     const postId = (params.searchParams.id);
     const currectProduct = products.filter((product => product._id == postId))
     function toNumber(str) {
         let discountNumber;
-
         str.length > 2 ? discountNumber = str.substr(0, 2) : discountNumber = str.substr(0, 1)
         return discountNumber
     }
 
-    console.log(currectProduct);
     return (
         <div>
+
             {currectProduct.map((product => (
+
                 <div key={product._id} className="product-container">
                     <ProductImage image1={product.imageLink.image1} image2={product.imageLink.image2} />
                     <div className="pr-details">
@@ -65,3 +67,16 @@ export default async function page(params) {
         </div>
     )
 };
+
+export async function generateMetadata(params) {
+    const products = await getPosts();
+    const postId = (params.searchParams.id);
+    const currectProduct = products.filter((product => product._id == postId))
+    const pname = (currectProduct[0].product_name);
+    console.log("NOW");
+
+    return {
+
+        title: pname,
+    }
+}

@@ -1,5 +1,5 @@
-"use client"
-import { useContext, useEffect } from "react"
+// "use client"
+// import { useContext, useEffect } from "react"
 import CartContext from "@/context/CartContext"
 import Image from "next/image"
 import "./orders.css"
@@ -8,11 +8,16 @@ import Nelements from "./orders-component/Nelements"
 import ElementsN from "./orders-component/ElementsN"
 import TotalWithTax from "./orders-component/TotalWithTax"
 import TotalN from "./orders-component/TotalN"
+export const metadata = {
+    title: 'My Orders',
+}
 export default function page(params) {
 
 
     return (
-        <>
+
+        <div>
+
             <div className="order-container  w-full  laptop:flex mobile:block laptop:mt-0 pb-8  ">
                 <div className="ordered-items laptop:w-8/12 mobile:w-full px-12 pt-10">
                     <div className="titles flex justify-between">
@@ -73,7 +78,7 @@ export default function page(params) {
                 </div>
             </div>
             {/* <Stepbackk /> */}
-        </>
+        </div>
 
     )
 };

@@ -1,7 +1,7 @@
 "use client"
 import { useContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import CartContext from "@/context/CartContext"
+
 export default function BuyButton({ id, name, description, price, category, image, discount }) {
     const { addItemToCart } = useContext(CartContext)
     const addToCartHandler = () => {
