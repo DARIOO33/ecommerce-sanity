@@ -2,7 +2,7 @@ import "./components.css"
 export default function SmallHeader({ mainText, smallText, SeeMore }) {
     return (
         <section>
-            <div className="miniheader w-full flex justify-between mt-6 items-center">
+            <div className="miniheader w-full flex justify-between mt-6 items-center mobile:px-2 laptop:px-0">
                 <div className="flex items-center">
 
                     <h1 className="under py-2 Top font-bold">{mainText}</h1>

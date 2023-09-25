@@ -3,7 +3,7 @@ import Scroll from "./Scroll";
 import "./components.css"
 import { getPosts } from "@/sanity/sanity.query";
 
-export default async function Products({ type }) {
+export default async function Products({ type, categorie }) {
     const products = await getPosts();
     let filtredProducts = [];
     function percentToInt(discount) {
@@ -17,8 +17,16 @@ export default async function Products({ type }) {
         filtredProducts = products.filter((product => percentToInt(product.discount) <= 25))
 
     }
-    if (type == "Weekly deals") {
+    else if (type == "Weekly deals") {
         filtredProducts = products.filter((product => percentToInt(product.discount) >= 30))
+
+    }
+    else {
+
+        filtredProducts = products.filter((product => (product.categorie).toLowerCase() == categorie.toLowerCase()))
+
+
+
 
     }
     console.log(filtredProducts);

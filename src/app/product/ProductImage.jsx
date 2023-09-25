@@ -32,7 +32,7 @@ export default function ProductImage({ image1, image2 }) {
 
     }
     return (
-        <div className="product-images">
+        <div className="product-images  ">
             <div className={loaded ? "product-img loaded" : "product-img"} >
 
                 <img className="mainimg" ref={imgRef} src={optimisedImage} loading="lazy" onLoad={() => imgload()} />
