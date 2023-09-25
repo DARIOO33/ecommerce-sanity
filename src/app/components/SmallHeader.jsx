@@ -4,7 +4,10 @@ export default function SmallHeader({ mainText, smallText, SeeMore }) {
         <section>
             <div className="miniheader w-full flex justify-between mt-6 items-center">
                 <div className="flex items-center">
+
                     <h1 className="under py-2 Top font-bold">{mainText}</h1>
+
+
                     {smallText.includes("Found") ?
                         <p className="ml-4 pb-2 Items">{smallText}</p>
                         :
