@@ -4,6 +4,8 @@ import Tag from "@/app/components/Tag"
 import ProductImage from "./ProductImage";
 import BuyButton from "./BuyButton";
 import RelatedItems from "./RelatedItems";
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
 import Offers from "../components/Offers";
 
 
@@ -30,6 +32,10 @@ export default async function page(params) {
                             <ProductImage image1={product.imageLink.image1} image2={product.imageLink.image2} />
                             <div className="pr-details">
                                 <h1 className="text-3xl font-bold">{product.product_name}</h1>
+                                <div className="mt-2">
+
+                                    <Rating name="read-only" value={5} readOnly />
+                                </div>
                                 <div className="mt-2">
 
                                     {product.discount.length > 1

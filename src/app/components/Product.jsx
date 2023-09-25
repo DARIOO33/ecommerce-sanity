@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation"
 import "./components.css"
 import Tag from "./Tag"
+import Rating from '@mui/material/Rating';
 import Image from "next/image"
 export default function Product({ id, imageUrl, ProductName, price, discount }) {
     const router = useRouter()
@@ -29,7 +30,11 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         <span className="cursor-pointer" >
                             {ProductName}
                         </span>
+
                     </a>
+                    <div>
+                        <Rating name="read-only" value={5} readOnly />
+                    </div>
                 </div>
                 <div className="tags mt-1 flex ">
                     {discount.length > 1
