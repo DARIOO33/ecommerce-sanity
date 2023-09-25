@@ -32,9 +32,10 @@ export default async function page(params) {
                             <ProductImage image1={product.imageLink.image1} image2={product.imageLink.image2} />
                             <div className="pr-details">
                                 <h1 className="text-3xl font-bold">{product.product_name}</h1>
-                                <div className="mt-2">
-
+                                <div className="flex items-center mt-2">
                                     <Rating name="read-only" value={5} readOnly />
+                                    <p className="ml-2 font-semibold text-blue-700">(5)</p>
+
                                 </div>
                                 <div className="mt-2">
 

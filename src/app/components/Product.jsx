@@ -32,8 +32,10 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         </span>
 
                     </a>
-                    <div>
+                    <div className="flex items-center">
                         <Rating name="read-only" value={5} readOnly />
+                        <p className="ml-2 font-semibold text-blue-700">(5)</p>
+
                     </div>
                 </div>
                 <div className="tags mt-1 flex ">
