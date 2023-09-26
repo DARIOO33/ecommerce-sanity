@@ -61,8 +61,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
 
                     <div className="button">
                         <a href={("/product?id=" + id)}>
-
-                            <button className="rounded-full laptop:text-xl mobile:text-xs mt-2   slide text-blue-800 cursor-pointer" >
+                            <button className="rounded-full laptop:text-xl mobile:text-xs    slide text-blue-800 cursor-pointer" >
                                 See Details
                             </button>
                         </a>
