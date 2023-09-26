@@ -4,7 +4,7 @@ import CartContext from "@/context/CartContext"
 import Image from "next/image"
 import "./orders.css"
 import Price from "./orders-component/Price"
-
+import Tag from "../components/Tag"
 
 export default function Items(params) {
     function percentToInt(discount) {
@@ -32,6 +32,7 @@ export default function Items(params) {
     catch {
         orders = []
     }
+
     return (
         <div>
             {orders.map((order => (
@@ -47,6 +48,13 @@ export default function Items(params) {
                             </div>
                             <div className="p-details laptop:w-2/4 mobile:w-full justify-evenly  px-5 flex mt-1.5 mobile:text-center laptop:text-left ">
                                 <h1 className="font-semibold text-sm">{order.name}</h1>
+                                {order.discount.length > 1
+                                    ?
+                                    <Tag text={"Save"} bg={"red"} type={"small"} percent={percentToInt(order.discount)} />
+
+                                    :
+                                    <div></div>
+                                }
                                 <h1 className="text-gray-600 font-normal text-sm">{order.category}</h1>
                                 <h1 className="text-red-500 cursor-pointer font-normal text-sm" onClick={() => deleteItemFromCart(order.product_id)}>Remove</h1>
                             </div>

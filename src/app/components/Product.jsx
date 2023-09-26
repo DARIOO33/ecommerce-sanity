@@ -46,11 +46,11 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         :
                         <div></div>
                     }
-                    {Number(discountNumber) > 20 ?
+                    {/* {Number(discountNumber) > 20 ?
                         <Tag text={"Promotion Deal"} bg={"orange"} />
                         :
                         <div></div>
-                    }
+                    } */}
 
 
                 </div>
