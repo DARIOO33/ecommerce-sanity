@@ -3,7 +3,8 @@ import Scroll from "./Scroll";
 import "./components.css"
 import { getPosts } from "@/sanity/sanity.query";
 
-export default async function Products({ type, categorie }) {
+export default async function Products({ type, categorie, currentpostid }) {
+    console.log(currentpostid);
     const products = await getPosts();
     let filtredProducts = [];
     function percentToInt(discount) {
@@ -40,13 +41,18 @@ export default async function Products({ type, categorie }) {
             }
             <div className="catalog-container  mt-10  pb-6">
                 {filtredProducts.map((product => (
-                    <Product
-                        key={product._id}
-                        id={product._id}
-                        imageUrl={product.imageLink.image1}
-                        ProductName={product.product_name}
-                        price={(product.product_price) - ((product.product_price) * (percentToInt(product.discount) / 100))}
-                        discount={product.discount} />
+
+
+                    product._id == currentpostid.id ?
+                        <div key={"test"}></div>
+                        :
+                        <Product
+                            key={product._id}
+                            id={product._id}
+                            imageUrl={product.imageLink.image1}
+                            ProductName={product.product_name}
+                            price={(product.product_price) - ((product.product_price) * (percentToInt(product.discount) / 100))}
+                            discount={product.discount} />
                 )))}
             </div>
 

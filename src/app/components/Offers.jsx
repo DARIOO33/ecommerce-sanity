@@ -2,8 +2,8 @@ import Products from "./Products"
 import SmallHeader from "./SmallHeader"
 import { getPosts } from "@/sanity/sanity.query";
 import "./components.css"
-export default async function Offers({ type, categorie }) {
-    console.log(categorie);
+export default async function Offers({ type, categorie, params }) {
+    const currentpostid = params || 0
     const products = await getPosts();
     let filtredProducts = []
     let categoryDetail = ""
@@ -33,7 +33,7 @@ export default async function Offers({ type, categorie }) {
     return (
         <>
             <SmallHeader mainText={type} smallText={categoryDetail} SeeMore={filtredProducts.length > 3 ? "See All >" : ""} />
-            <Products type={type} categorie={categorie} />
+            <Products type={type} categorie={categorie} currentpostid={currentpostid} />
         </>
     )
 };
