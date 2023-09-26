@@ -55,14 +55,10 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
 
                 </div>
                 <div className="details flex items-center mt-2">
-                    <div className="priceandshipping w-1/2">
-                        <div className="price laptop:text-xl mobile:text-sm font-bold">
-                            ${price.toFixed(2)}
-                        </div>
-                        {/* <div className="shipping  text-blue-800 font-bold">
-                            FREE SHIPPING
-                        </div> */}
+                    <div className="price laptop:text-xl mobile:text-sm font-bold">
+                        ${price.toFixed(2)}
                     </div>
+
                     <div className="button">
                         <a href={("/product?id=" + id)}>
 
