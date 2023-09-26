@@ -54,7 +54,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
 
 
                 </div>
-                <div className="details flex items-center mt-2">
+                <div className="details flex justify-between items-center mt-2">
                     <div className="price laptop:text-xl mobile:text-sm font-bold">
                         ${price.toFixed(2)}
                     </div>
