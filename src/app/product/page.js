@@ -77,6 +77,7 @@ export default async function page(params) {
                         </div>
 
                         <Offers type={"Related Items"} categorie={product.categorie} params={params.searchParams} />
+                        <Offers type={"Weekly deals"} categorie={product.categorie} params={params.searchParams} />
 
                     </div>
                 )))}

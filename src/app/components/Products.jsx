@@ -42,7 +42,7 @@ export default async function Products({ type, categorie, currentpostid }) {
 
 
                     product._id == currentpostid.id ?
-                        <div key={"test"}></div>
+                        <div key={"test"} className="hidden"></div>
                         :
                         <Product
                             key={product._id}
