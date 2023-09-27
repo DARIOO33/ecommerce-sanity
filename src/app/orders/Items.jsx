@@ -48,19 +48,22 @@ export default function Items(params) {
                             </div>
                             <div className="p-details laptop:w-2/4 mobile:w-full justify-evenly  px-5 flex mt-1.5 mobile:text-center laptop:text-left ">
                                 <h1 className="font-semibold text-sm">{order.name}</h1>
-                                {order.discount.length > 1
-                                    ?
-                                    <Tag text={"Save"} bg={"red"} type={"small"} percent={percentToInt(order.discount)} />
+                                <div className=" mobile:m-auto laptop:m-0">
 
-                                    :
-                                    <div></div>
-                                }
+                                    {order.discount.length > 1
+                                        ?
+                                        <Tag text={"Save"} bg={"red"} type={"small"} percent={percentToInt(order.discount)} />
+
+                                        :
+                                        <div></div>
+                                    }
+                                </div>
                                 <h1 className="text-gray-600 font-normal text-sm">{order.category}</h1>
                                 <h1 className="text-red-500 cursor-pointer font-normal text-sm" onClick={() => deleteItemFromCart(order.product_id)}>Remove</h1>
                             </div>
                         </div>
                     </div>
-                    <div className="quantity laptop:w-3/12 mobile:w-full text-center">
+                    <div className="quantity laptop:w-3/12 mobile:w-full text-center mobile:mt-2 laptop:mt-0">
 
                         <div className="flex w-1/2 h-4/5 m-auto justify-evenly items-center">
                             <p className="font-bold cursor-pointer text-xl " onClick={() => removeQuantity(order.product_id)}>-</p>

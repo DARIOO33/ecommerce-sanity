@@ -2,7 +2,7 @@ import "./components.css"
 import { AiOutlineSearch } from "react-icons/ai";
 export default function HeaderDetail({ smalltext, bigtext, icon }) {
     return (
-        <div className="px-2 laptop:mr-6  flex items-center cursor-pointer w-full m-auto">
+        <div className="px-2 laptop:mr-6  flex items-center cursor-pointer w-full m-auto ">
             <a href={"/" + bigtext.toLowerCase()}>
 
                 <div className="icon2 w-2/6">

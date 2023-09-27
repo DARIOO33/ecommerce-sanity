@@ -21,10 +21,10 @@ export default function page(params) {
             <div className="order-container  w-full  laptop:flex mobile:block laptop:mt-0 pb-8  ">
                 <div className="ordered-items laptop:w-8/12 mobile:w-full px-12 pt-10">
                     <div className="titles flex justify-between">
-                        <h1 className="text-2xl font-bold">Shopping Cart</h1>
+                        <h1 className="laptop:text-2xl mobile:text-lg font-bold">Shopping Cart</h1>
                         <Nelements />
                     </div>
-                    <div className="mt-6 line w-full bg-slate-400 h-0.5 opacity-50 "></div>
+                    <div className="laptop:mt-6 mobile:mt-2 line w-full bg-slate-400 h-0.5 opacity-50 "></div>
 
 
                     <Items />

@@ -1,7 +1,7 @@
 import Image from "next/image"
 export default function FeaturedBrands(params) {
     return (
-        <div className="mobile:px-4 laptop:px-0">
+        <div className="mobile:px-4 laptop:px-0 mt-2">
 
             <div className="brands flex items-center justify-between  w-full ">
                 <h1 className="text-blue-700 font-bold text-2xl  ">FEATURED BRANDS</h1>

@@ -18,10 +18,10 @@ export default function Nelements(params) {
             {orders == "Loading ..." ?
                 <div className='flex items-center'>
                     <p className='font-bold'>{orders}</p>
-                    <h1 className="ml-2 text-2xl font-bold"> Items</h1>
+                    <h1 className="ml-2 laptop:text-2xl mobile:text-lg font-bold"> Items</h1>
                 </div>
                 :
-                <h1 className="text-2xl font-bold">{orders} Items</h1>
+                <h1 className="laptop:text-2xl mobile:text-lg font-bold">{orders} Items</h1>
 
             }
 

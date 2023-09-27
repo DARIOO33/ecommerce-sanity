@@ -24,7 +24,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                     />
 
                 </div>
-                <div className="product-title mt-2 laptop:text-lg mobile:text-sm font-bold w-11/12 " >
+                <div className="product-title mt-2 laptop:text-xl mobile:text-sm font-bold w-11/12 " >
                     <a href={("/product?id=" + id)}>
 
                         <span className="cursor-pointer" >
