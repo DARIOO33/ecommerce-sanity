@@ -13,12 +13,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <GlobalProvider>        <div>
-          <Header />
-          <div className='content'>
-            {children}
+        <GlobalProvider>
+          <div>
+            <Header />
+            <div className='content pb-4'>
+              {children}
+            </div>
           </div>
-        </div>
         </GlobalProvider>
 
       </body>
