@@ -1,6 +1,7 @@
 import Products from "../components/Products";
 import SmallHeader from "../components/SmallHeader";
 import { getPosts } from "@/sanity/sanity.query";
+import "./search.css"
 import Product from "../components/Product";
 
 export default async function page(params) {
@@ -17,7 +18,7 @@ export default async function page(params) {
     return (
         <>
             <SmallHeader smallText={filtredProducts.length + " Items Found"} />
-            <div className="catalog-container  mt-10  pb-6">
+            <div className="catalog-container-search  grid mt-10  pb-6">
                 {filtredProducts.map((product => (
                     <Product
                         key={product._id}

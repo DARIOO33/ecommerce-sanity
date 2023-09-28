@@ -1,0 +1,19 @@
+.catalog-container-search {
+    grid-template-columns: repeat(3, 1fr);
+    /* background-color: red; */
+    margin: auto;
+
+}
+
+.catalog-container-search .card {
+    margin: 1.5rem auto;
+}
+
+@media screen and (max-width:1000px) {
+    .catalog-container-search {
+        grid-template-columns: repeat(2, 1fr);
+        /* background-color: red; */
+        margin: auto;
+
+    }
+}
