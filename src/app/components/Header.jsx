@@ -12,8 +12,23 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useSearchParams } from 'next/navigation'
+import { useContext } from "react";
+import CartContext from "@/context/CartContext";
 
 export default function Header(params) {
+    const { addItemToCart, deleteItemFromCart, cart, addQuantity, removeQuantity } = useContext(CartContext)
+    let orders = []
+
+    try {
+        if (cart.cartItems) {
+            orders = (cart.cartItems)
+
+        }
+
+    }
+    catch {
+        orders = []
+    }
     const [searchinput, setSearchinput] = useState("")
     const [active, setActive] = useState(false)
     const [activeMenu, setActiveMenu] = useState(false)
@@ -71,7 +86,7 @@ export default function Header(params) {
                         </div>
                         <div className="infos flex mr-8 cursor-pointer">
                             <HeaderDetail smalltext={"Sign in"} bigtext={"Account"} icon={<HiOutlineUser />} />
-                            <HeaderDetail smalltext={""} bigtext={"Orders"} icon={<BiShoppingBag />} />
+                            <HeaderDetail smalltext={"(" + orders.length + ")"} bigtext={"Orders "} icon={<BiShoppingBag />} />
                             <HeaderDetail smalltext={""} bigtext={"Cart"} icon={<BsCart4 />} />
 
                         </div>

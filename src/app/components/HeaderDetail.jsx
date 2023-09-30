@@ -11,10 +11,10 @@ export default function HeaderDetail({ smalltext, bigtext, icon }) {
             </a>
 
             <div className="text w-4/6 ml-2 ">
-                <p className="text-sm text-white"> {smalltext} </p>
                 <a href={"/" + bigtext.toLowerCase()}>
                     <p className="font-bold text-lg text-white"> {bigtext} </p>
                 </a>
+                <p className="text-sm text-white"> {smalltext} </p>
             </div>
         </div>
     )

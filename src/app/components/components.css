@@ -228,6 +228,21 @@
         display: none;
     }
 
+    .imageC {
+        height: 7rem;
+        width: 7rem;
+    }
+
+    .categories {
+        display: flex;
+        justify-content: space-between;
+        grid-template-columns: repeat(2, 1fr);
+        width: auto;
+        overflow: auto;
+        padding: .75rem;
+        /* position: relative; */
+    }
+
     .phone-search {
         display: block;
         opacity: 0;
