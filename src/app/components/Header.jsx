@@ -16,6 +16,34 @@ import { useContext } from "react";
 import CartContext from "@/context/CartContext";
 
 export default function Header(params) {
+    const [isSticky, setIsSticky] = useState(false);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+
+            console.log(currentScrollPos);
+            if (currentScrollPos > prevScrollPos) {
+                setIsSticky(false);
+            } else {
+                setIsSticky(true);
+            }
+
+            if (currentScrollPos < 150) {
+                setIsSticky(false);
+            }
+
+            setPrevScrollPos(currentScrollPos);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    }, [prevScrollPos]);
+
     const { addItemToCart, deleteItemFromCart, cart, addQuantity, removeQuantity } = useContext(CartContext)
     let orders = []
 
@@ -30,6 +58,7 @@ export default function Header(params) {
         orders = []
     }
     const [searchinput, setSearchinput] = useState("")
+
     const [active, setActive] = useState(false)
     const [activeMenu, setActiveMenu] = useState(false)
     const router = useRouter()
@@ -67,11 +96,11 @@ export default function Header(params) {
         }
     }
     return (
-        <div>
+        <div >
             {!pathname.includes("studio") ?
                 <div>
 
-                    <header className="pcheader justify-between items-center">
+                    <header className={` ${isSticky ? 'sticky w-full top-0' : ''} pcheader justify-between items-center`}>
 
                         <div className="title laptop:text-4xl  text-white font-bold cursor-pointer w-2/12 text-center">
                             <Link href={"/"}>
@@ -174,6 +203,6 @@ export default function Header(params) {
                 :
                 <div></div>
             }
-        </div>
+        </div >
     )
 };

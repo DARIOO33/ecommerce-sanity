@@ -4,11 +4,22 @@
     height: 7rem;
     display: flex;
     z-index: 4;
+    transition: .3s;
 }
 
 .product-title span {
     transition: .4s;
 
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Change the background color when sticky */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
 }
 
 .product-title span:hover {
