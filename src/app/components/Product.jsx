@@ -16,7 +16,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                 <Link href={{
                     pathname: "/product",
                     query: {
-                        id: id
+                        id: id,
                     }
                 }}>
                     <div className="product-image bg-gray-200 w-full flex justify-center ">
@@ -35,7 +35,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                     <Link href={{
                         pathname: "/product",
                         query: {
-                            id: id
+                            id: id,
                         }
                     }}>
 
@@ -75,7 +75,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         <Link href={{
                             pathname: "/product",
                             query: {
-                                id: id
+                                id: id,
                             }
                         }}>
                             <button className="rounded-full laptop:text-xl mobile:text-xs    slide text-blue-800 cursor-pointer" >

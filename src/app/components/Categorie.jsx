@@ -16,7 +16,7 @@ export default function Categorie({ name, imgsrc }) {
             <Link href={{
                 pathname: "/categorie",
                 query: {
-                    name: `${name.toLowerCase()}`
+                    name: `${name.toLowerCase()}`,
                 }
             }}>
                 <h1 className="hoverColor laptop:text-xl mobile:text-lg font-bold text-center mt-4  cursor-pointer  " >
