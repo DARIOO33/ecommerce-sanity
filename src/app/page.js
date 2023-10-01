@@ -7,13 +7,13 @@ import BrowseCategories from './components/BrowseCategories'
 export default async function Home() {
 
   return (
-    <>
+    <div >
 
       <Offers type={"Top Offers"} />
       <FeaturedBrands />
       <Offers type={"Weekly deals"} />
       <BrowseCategories />
 
-    </>
+    </div>
   )
 }
