@@ -100,7 +100,7 @@ export default function Header(params) {
             {!pathname.includes("studio") ?
                 <div>
 
-                    <header className={` ${isSticky ? 'sticky w-full top-0' : ''} pcheader justify-between items-center`}>
+                    <header className={` ${isSticky ? 'sticky ' : ''} pcheader justify-between items-center`}>
 
                         <div className="title laptop:text-4xl  text-white font-bold cursor-pointer w-2/12 text-center">
                             <Link href={"/"}>
@@ -110,7 +110,14 @@ export default function Header(params) {
                         <div className="search-bar w-5/12 bg-white h-14 flex items-center rounded-full px-4 justify-between" >
 
                             <input className="text-lg  font-normal " maxLength={35} type="text" placeholder="Search everything at FlexStar" value={searchinput} onChange={(e) => setSearchinput(e.target.value)} />
-                            <div className="icon cursor-pointer" onClick={() => searchClick()}><AiOutlineSearch /></div>
+                            <Link href={{
+                                pathname: "/search",
+                                query: {
+                                    keyword: searchinput,
+                                }
+                            }}>
+                                <div className="icon cursor-pointer" ><AiOutlineSearch /></div>
+                            </Link>
 
                         </div>
                         <div className="infos flex mr-8 cursor-pointer">
