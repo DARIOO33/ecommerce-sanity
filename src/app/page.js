@@ -4,6 +4,7 @@ import FeaturedBrands from './components/FeaturedBrands'
 import { Suspense } from 'react'
 import BrowseCategories from './components/BrowseCategories'
 
+
 export default async function Home() {
 
   return (
