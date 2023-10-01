@@ -6,7 +6,7 @@ import "../search/search.css"
 
 export default async function page(params) {
     const products = await getPosts();
-    const categorie = (params.searchParams.categorie);
+    const categorie = (params.searchParams.name);
     // console.log(keyword);
     function percentToInt(discount) {
         if (discount == "") return 0
