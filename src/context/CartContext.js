@@ -77,11 +77,16 @@ export const CartProvider = ({ children }) => {
     }
 
     const addQuantity = (id) => {
+
         // Retrieve the cart from local storage
         const storedCart = JSON.parse(localStorage.getItem("cart")) || { cartItems: [] };
 
         // Find the index of the item with the given id in the cart
         const itemIndex = storedCart.cartItems.findIndex((item) => item.product_id === id);
+
+        if (storedCart.cartItems[itemIndex].quantity == 9) {
+            return false
+        }
         if (itemIndex !== -1) {
             storedCart.cartItems[itemIndex].quantity += 1;
         } else {
@@ -91,11 +96,17 @@ export const CartProvider = ({ children }) => {
         setCartToState();
     }
     const removeQuantity = (id) => {
+
+
         // Retrieve the cart from local storage
         const storedCart = JSON.parse(localStorage.getItem("cart")) || { cartItems: [] };
 
         // Find the index of the item with the given id in the cart
         const itemIndex = storedCart.cartItems.findIndex((item) => item.product_id === id);
+
+        if (storedCart.cartItems[itemIndex].quantity == 1) {
+            return false
+        }
         if (itemIndex !== -1) {
             storedCart.cartItems[itemIndex].quantity -= 1;
         } else {
