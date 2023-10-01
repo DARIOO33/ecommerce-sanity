@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation"
 import "./components.css"
 import Tag from "./Tag"
+import Link from "next/link"
 import Rating from '@mui/material/Rating';
 import Image from "next/image"
 export default function Product({ id, imageUrl, ProductName, price, discount }) {
@@ -12,26 +13,37 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
         <div className="h-full">
 
             <div className="card mr-8">
-                <div className="product-image bg-gray-200 w-full flex justify-center ">
+                <Link href={{
+                    pathname: "/product",
+                    query: {
+                        id: id
+                    }
+                }}>
+                    <div className="product-image bg-gray-200 w-full flex justify-center ">
 
-                    <Image
-                        onClick={() => router.push("/product?id=" + id)}
-                        alt=""
-                        className=" cursor-pointer"
-                        src={imageUrl}
-                        width={200}
-                        height={200}
-                    />
+                        <Image
+                            alt=""
+                            className=" cursor-pointer"
+                            src={imageUrl}
+                            width={200}
+                            height={200}
+                        />
 
-                </div>
+                    </div>
+                </Link>
                 <div className="product-title mt-2 laptop:text-xl mobile:text-sm font-bold w-11/12 " >
-                    <a href={("/product?id=" + id)}>
+                    <Link href={{
+                        pathname: "/product",
+                        query: {
+                            id: id
+                        }
+                    }}>
 
                         <span className="cursor-pointer" >
                             {ProductName}
                         </span>
 
-                    </a>
+                    </Link>
                     <div className="flex items-center">
                         <Rating name="read-only" value={5} readOnly />
                         <p className="ml-2 font-semibold text-blue-700">(5)</p>
@@ -60,11 +72,16 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                     </div>
 
                     <div className="button">
-                        <a href={("/product?id=" + id)}>
+                        <Link href={{
+                            pathname: "/product",
+                            query: {
+                                id: id
+                            }
+                        }}>
                             <button className="rounded-full laptop:text-xl mobile:text-xs    slide text-blue-800 cursor-pointer" >
                                 See Details
                             </button>
-                        </a>
+                        </Link>
 
                     </div>
                 </div>
