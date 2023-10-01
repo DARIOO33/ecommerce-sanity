@@ -14,11 +14,18 @@ export default async function Products({ type, categorie, currentpostid }) {
     }
 
     if (type == 'Top Offers') {
-        filtredProducts = products.filter((product => percentToInt(product.discount) <= 25))
+        filtredProducts = products.filter((product => (percentToInt(product.discount) >= 5) && percentToInt(product.discount) <= 25))
+
 
     }
     else if (type == "Weekly deals") {
         filtredProducts = products.filter((product => percentToInt(product.discount) >= 30))
+
+    }
+    else if ((type == "Feautured Products")) {
+        filtredProducts = products.filter((product => percentToInt(product.discount) == 0))
+
+
 
     }
     else {

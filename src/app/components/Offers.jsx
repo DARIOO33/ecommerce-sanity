@@ -14,13 +14,21 @@ export default async function Offers({ type, categorie, params }) {
     }
 
     if (type == 'Top Offers') {
-        filtredProducts = products.filter((product => percentToInt(product.discount) <= 25))
+        filtredProducts = products.filter((product => (percentToInt(product.discount) >= 5) && percentToInt(product.discount) <= 25))
+        console.log(filtredProducts);
         categoryDetail = "(" + filtredProducts.length + " items)"
 
     }
     else if (type == "Weekly deals") {
         filtredProducts = products.filter((product => percentToInt(product.discount) >= 30))
         categoryDetail = "(Up to 30% off)"
+
+    }
+    else if ((type == "Feautured Products")) {
+        filtredProducts = products.filter((product => percentToInt(product.discount) == 0))
+        categoryDetail = ""
+
+
 
     }
     else {

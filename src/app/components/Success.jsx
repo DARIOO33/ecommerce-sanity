@@ -2,9 +2,12 @@ import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 export default function Success(params) {
     return (
-        <Stack sx={{ width: '100%' }} spacing={2}>
-            <Alert severity="success">This is a success alert — check it out!</Alert>
+        <div className='absolute right-12 bottom-16'>
 
-        </Stack>
+            <Stack sx={{ width: '100%' }} spacing={2}>
+                <Alert severity="success">Item added to your cart !</Alert>
+
+            </Stack>
+        </div>
     )
 };

@@ -23,7 +23,7 @@ export default function BrowseCategories(params) {
         }
     ]
     return (
-        <div className="mt-6">
+        <div className="mt-6 pb-6">
             <h1 className=" font-bold text-center text-4xl">Browse <span className="ml-2 font-bold text-center text-4xl text-blue-600">Categories</span> </h1>
             <div className="w-9/12 m-auto categories laptop:flex laptop:justify-between mt-6 mobile:grid">
                 {categories.map((categorie => (

@@ -14,6 +14,7 @@ export default async function Home() {
       <FeaturedBrands />
       <Offers type={"Weekly deals"} />
       <BrowseCategories />
+      <Offers type={"Feautured Products"} />
 
     </div>
   )

@@ -1,9 +1,18 @@
 import "./components.css"
 export default function Tag({ text, bg, type, percent }) {
+    if (percent == 0) {
+        return (
+
+            <></>
+        )
+    }
     return (
         <span className="flex cursor-pointer">
 
+
+
             {type == "small" ?
+
                 <div style={{ backgroundColor: bg }} className=" shape py-0.5 px-2 text-small   mr-2">
                     {text} {percent} %
                 </div>
@@ -14,6 +23,7 @@ export default function Tag({ text, bg, type, percent }) {
                 </div>
 
             }
+
 
 
 
