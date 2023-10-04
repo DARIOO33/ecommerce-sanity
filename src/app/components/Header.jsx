@@ -24,7 +24,7 @@ export default function Header(params) {
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
 
-            console.log(currentScrollPos);
+            // console.log(currentScrollPos);
             if (currentScrollPos > prevScrollPos) {
                 setIsSticky(false);
             } else {
@@ -65,6 +65,7 @@ export default function Header(params) {
     const pathname = usePathname()
     const searchParams = useSearchParams()
     let search = searchParams.get('keyword') || ""
+    console.log(search);
     useEffect(() => {
         search.length > 0 ?
             setSearchinput(search)

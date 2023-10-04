@@ -14,7 +14,7 @@ export default async function page(params) {
     const filtredProducts = products.filter((product => product.product_name.toLowerCase().includes(keyword.toLowerCase())))
 
     return (
-        <div key={Math.random()}>
+        <div key={Math.random()} className="SearchResults">
             <SmallHeader smallText={filtredProducts.length + " Items Found"} />
             <div className="catalog-container-search  grid mt-10  pb-6" >
                 <Suspense>

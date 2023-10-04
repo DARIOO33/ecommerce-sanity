@@ -7,6 +7,12 @@
     transition: .3s;
 }
 
+.footer-content {
+    max-width: 75rem;
+    background-color: red;
+    margin: auto;
+}
+
 .product-title span {
     transition: .4s;
 

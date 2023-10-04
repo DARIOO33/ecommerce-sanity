@@ -32,6 +32,9 @@ export default async function page(params) {
                             <ProductImage image1={product.imageLink.image1} image2={product.imageLink.image2} />
                             <div className="pr-details">
                                 <h1 className="text-3xl font-bold">{product.product_name}</h1>
+                                <div className="mobile:mt-3 price laptop:text-2xl mobile:text-4xl font-bold">
+                                    ${(product.product_price).toFixed(2)}
+                                </div>
                                 <div className="flex items-center mt-2">
                                     <Rating name="read-only" value={5} readOnly />
                                     <p className="ml-2 font-semibold text-blue-700">(5)</p>
@@ -51,9 +54,7 @@ export default async function page(params) {
                                 <div className=" w-full m-auto text-center mobile:block items-center justify-evenly mt-6">
                                     <div>
 
-                                        <div className="mobile:mt-3 price laptop:text-2xl mt-1 mobile:text-4xl font-bold">
-                                            ${(product.product_price).toFixed(2)}
-                                        </div>
+
                                         {/* <div className="mobile:mt-3 shipping laptop:text-lg mobile:text-lg mt-1 text-blue-800 font-bold">
                                     FREE SHIPPING
                                 </div> */}

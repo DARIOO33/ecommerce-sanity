@@ -71,8 +71,17 @@ export default function page(params) {
                         <TotalWithTax tax={5} />
                     </div>
 
-                    <div className="py-8 text-center pb-16">
-                        <button className="bg-purple-600 hover:bg-purple-900 active:opacity-80 py-2 px-8 w-64 text-lg text-white ">Check Out</button>
+                    <div className="mobile:mt-4 py-2 w-full  buttonn pb-6">
+
+
+                        <button className=" w-full rounded-xl laptop:text-2xl mobile:text-xl  px-4 py-1 font-semibold  bg-blue-800 hover:bg-blue-700 text-white cursor-pointer">
+                            Buy Now
+                        </button>
+
+
+
+
+
                     </div>
 
                 </div>

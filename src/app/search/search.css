@@ -9,6 +9,10 @@
     margin: 1.5rem auto;
 }
 
+.SearchResults {
+    min-height: 70vh;
+}
+
 @media screen and (max-width:1000px) {
     .catalog-container-search {
         grid-template-columns: repeat(2, 1fr);

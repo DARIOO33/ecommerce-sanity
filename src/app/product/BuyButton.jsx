@@ -35,13 +35,13 @@ export default function BuyButton({ id, name, description, price, category, imag
 
     }
     return (
-        <div className="mobile:mt-4 py-2 buttonn">
+        <div className="mobile:mt-4 py-2 w-full  buttonn">
             {disablebutton ?
-                <button className="rounded-full laptop:text-2xl mobile:text-xl  px-4 py-1 font-semibold slide text-blue-800 opacity-30 cursor-pointer" >
+                <button className=" w-full rounded-xl laptop:text-2xl mobile:text-xl  px-4 py-1 font-semibold  bg-blue-800 text-white opacity-30 cursor-pointer" >
                     Buy Now
                 </button>
                 :
-                <button className="rounded-full laptop:text-2xl mobile:text-xl  px-4 py-1 font-semibold slide text-blue-800 cursor-pointer" onClick={() => addToCartHandler()}>
+                <button className=" w-full rounded-xl laptop:text-2xl mobile:text-xl  px-4 py-1 font-semibold  bg-blue-800 text-white cursor-pointer" onClick={() => addToCartHandler()}>
                     Buy Now
                 </button>
             }

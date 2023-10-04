@@ -76,7 +76,8 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                             pathname: "/product",
                             query: {
                                 id: id,
-                            }
+                            },
+                            shallow: true
                         }}>
                             <button className="rounded-full laptop:text-xl mobile:text-xs    slide text-blue-800 cursor-pointer" >
                                 See Details
