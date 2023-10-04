@@ -12,7 +12,7 @@ export default function ProductImage({ image1, image2 }) {
         return optimisedImage
     }
     const [loaded, setLoaded] = useState(false)
-    // const optimisedImage = optimiseYourImage(image1, 50)
+    const optimisedImage = optimiseYourImage(image1, 50)
     const clickimng1 = optimiseYourImage(image1, 100)
     const clickimng2 = optimiseYourImage(image2, 100)
     const imgRef = useRef(null)
@@ -25,8 +25,7 @@ export default function ProductImage({ image1, image2 }) {
 
 
         console.log("Loaded");
-        imgRef.current.src = image1
-
+        setImgPreview(image1)
 
     }, [loaded])
     const imgload = () => {
@@ -39,7 +38,7 @@ export default function ProductImage({ image1, image2 }) {
         <div className="product-images  ">
             <div className={loaded ? "product-img loaded" : "product-img"} >
 
-                <img className="mainimg" ref={imgRef} src={() => optimiseYourImage(imgRef)} loading="lazy" onLoad={() => imgload()} />
+                <img className="mainimg" ref={imgRef} src={optimisedImage} loading="lazy" onLoad={() => imgload()} />
 
             </div>
             <div className="images-c flex">
