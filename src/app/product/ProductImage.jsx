@@ -17,10 +17,9 @@ export default function ProductImage({ image1, image2 }) {
     const clickimng2 = optimiseYourImage(image2, 100)
     const imgRef = useRef(null)
     const setImgPreview = (url) => {
-        setLoaded(true)
         imgRef.current.src = url
+
     }
-    const [index, setIndex] = useState(0)
     useEffect(() => {
 
 
