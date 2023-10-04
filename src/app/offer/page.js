@@ -1,48 +1,44 @@
-import Products from "./Products"
-import SmallHeader from "./SmallHeader"
+import Offers from "../components/Offers";
+import FiltredProducts from "./FiltredProducts";
 import { getPosts } from "@/sanity/sanity.query";
-import "./components.css"
-export default async function Offers({ type, categorie, params }) {
-    const currentpostid = params || 0
+import "../search/search.css"
+export default async function page(params) {
     const products = await getPosts();
-    let filtredProducts = []
     let categoryDetail = ""
     function percentToInt(discount) {
         let discountNumber;
         discount.length > 2 ? discountNumber = discount.substr(0, 2) : discountNumber = discount.substr(0, 1)
         return Number(discountNumber)
     }
-    let otype = type.replace(" ", "")
-
-    if (otype == 'TopOffers') {
+    const offerType = (params.searchParams.name);
+    let filtredProducts;
+    if (offerType == 'TopOffers') {
         filtredProducts = products.filter((product => (percentToInt(product.discount) >= 5) && percentToInt(product.discount) <= 25))
         console.log(filtredProducts);
         categoryDetail = "(" + filtredProducts.length + " items)"
 
     }
-    else if (otype == "Weeklydeals") {
+    else if (offerType == "Weeklydeals") {
         filtredProducts = products.filter((product => percentToInt(product.discount) >= 30))
         categoryDetail = "(Up to 30% off)"
 
     }
-    else if ((otype == "FeauturedProducts")) {
+    else if ((offerType == "FeauturedProducts")) {
         filtredProducts = products.filter((product => percentToInt(product.discount) == 0))
         categoryDetail = ""
 
 
 
     }
-    else {
-        filtredProducts = products.filter((product => (product.categorie).toLowerCase() == categorie.toLowerCase()))
-
-    }
-
-
-
     return (
         <>
-            <SmallHeader mainText={type} smallText={categoryDetail} SeeMore={filtredProducts.length > 3 ? "See All >" : ""} />
-            <Products type={type} categorie={categorie} currentpostid={currentpostid} />
+            <div key={Math.random()} className="SearchResults">
+                <div className="catalog-container-search  grid mt-10  pb-6" >
+                    <FiltredProducts filtredProducts={filtredProducts} />
+                </div>
+            </div>
+
+
         </>
     )
 };

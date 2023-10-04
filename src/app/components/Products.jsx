@@ -13,16 +13,17 @@ export default async function Products({ type, categorie, currentpostid }) {
         return Number(discountNumber)
     }
 
-    if (type == 'Top Offers') {
+    let otype = type.replace(" ", "")
+    if (otype == 'TopOffers') {
         filtredProducts = products.filter((product => (percentToInt(product.discount) >= 5) && percentToInt(product.discount) <= 25))
 
 
     }
-    else if (type == "Weekly deals") {
+    else if (otype == "Weeklydeals") {
         filtredProducts = products.filter((product => percentToInt(product.discount) >= 30))
 
     }
-    else if ((type == "Feautured Products")) {
+    else if ((otype == "FeauturedProducts")) {
         filtredProducts = products.filter((product => percentToInt(product.discount) == 0))
 
 
@@ -36,7 +37,7 @@ export default async function Products({ type, categorie, currentpostid }) {
 
 
     }
-
+    const showproduct = filtredProducts.slice(0, 7)
     return (
         <>
             {filtredProducts.length > 3 ?
