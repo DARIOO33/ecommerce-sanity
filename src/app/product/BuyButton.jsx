@@ -7,12 +7,7 @@ export default function BuyButton({ id, name, description, price, category, imag
     const { addItemToCart } = useContext(CartContext)
     const [showtoast, setShowtoast] = useState(false);
     const [disablebutton, setDisablebutton] = useState(false);
-    useEffect(() => {
-        setTimeout(() => {
-            setShowtoast(false);
-            setDisablebutton(false)
-        }, 1500);
-    }, [showtoast]);
+
 
 
     const addToCartHandler = () => {
@@ -30,6 +25,10 @@ export default function BuyButton({ id, name, description, price, category, imag
             discount: discount,
             image: image
         })
+        setTimeout(() => {
+            setShowtoast(false);
+            setDisablebutton(false)
+        }, 2500);
 
 
 
