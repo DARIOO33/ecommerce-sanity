@@ -91,6 +91,10 @@ export default function Header(params) {
         if (searchinput) {
 
             router.push(`/search?keyword=${searchinput}`)
+            setTimeout(() => {
+
+                setActive(!active);
+            }, 500);
         }
         else {
             alert("type somnething to search please")
@@ -122,8 +126,8 @@ export default function Header(params) {
 
                         </div>
                         <div className="infos flex mr-8 cursor-pointer">
-                            <HeaderDetail smalltext={"Sign in"} bigtext={"Account"} icon={<HiOutlineUser />} />
-                            <HeaderDetail smalltext={"(" + orders.length + ")"} bigtext={"Orders "} icon={<BiShoppingBag />} />
+                            <HeaderDetail smalltext={" "} bigtext={"Account"} icon={<HiOutlineUser />} />
+                            <HeaderDetail smalltext={"(" + orders.length + ")"} bigtext={"orders"} icon={<BiShoppingBag />} />
                             <HeaderDetail smalltext={""} bigtext={"Cart"} icon={<BsCart4 />} />
 
                         </div>

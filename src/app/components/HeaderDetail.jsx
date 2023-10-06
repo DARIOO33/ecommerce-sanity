@@ -13,7 +13,7 @@ export default function HeaderDetail({ smalltext, bigtext, icon }) {
                 </div>
             </Link>
 
-            <div className="text w-4/6 ml-2 ">
+            <div className="text w-4/6 ml-2 flex items-center  ">
                 <Link href={{
                     pathname: bigtext.toLowerCase(),
                 }}>
@@ -24,7 +24,7 @@ export default function HeaderDetail({ smalltext, bigtext, icon }) {
 
 
                 }}>
-                    <p className="text-sm text-white"> {smalltext} </p>
+                    <p className="text-sm text-white ml-2"> {smalltext} </p>
                 </Link>
             </div>
         </div>

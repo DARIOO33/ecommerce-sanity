@@ -18,9 +18,12 @@ export default function SmallHeader({ mainText, smallText, SeeMore }) {
 
                 </div>
                 <div className=" cursor-pointer text-xl font-bold text-blue-600">
-                    <a href={"/offer?name=" + mainText.replace(" ", "")}>
-                        {SeeMore}
-                    </a>
+                    {mainText ?
+                        <a href={"/offer?name=" + mainText.replace(" ", "")}>
+                            {SeeMore}
+                        </a> : <> </>}
+
+
                 </div>
 
             </div>
