@@ -31,7 +31,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
 
                     </div>
                 </Link>
-                <div className="product-title mt-2 laptop:text-xl mobile:text-sm font-bold w-11/12 " >
+                <div className="product-title mt-2  laptop:text-xl mobile:text-sm font-bold w-11/12 " >
                     <Link href={{
                         pathname: "/product",
                         query: {
@@ -39,7 +39,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         }
                     }}>
 
-                        <span className="cursor-pointer" >
+                        <span className="cursor-pointer " >
                             {ProductName}
                         </span>
 
@@ -50,7 +50,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
 
                     </div>
                 </div>
-                <div className="tags mt-1 flex ">
+                <div className="tags  mt-1 flex ">
                     {discount.length > 1
                         ?
                         <Tag text={"Save"} bg={"red"} percent={discountNumber} />
