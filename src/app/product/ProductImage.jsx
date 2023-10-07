@@ -17,27 +17,21 @@ export default function ProductImage({ image1, image2 }) {
     const clickimng2 = optimiseYourImage(image2, 100)
     const imgRef = useRef(null)
     const setImgPreview = (url) => {
+        setLoaded(true)
+        console.log("Loaded");
         imgRef.current.src = url
-
     }
     useEffect(() => {
-
-
-        console.log("Loaded");
         setImgPreview(image1)
-
     }, [loaded])
-    const imgload = () => {
-        setLoaded(true)
 
-    }
 
 
     return (
         <div className="product-images  ">
             <div className={loaded ? "product-img loaded" : "product-img"} >
 
-                <img className="mainimg" ref={imgRef} src={optimisedImage} loading="lazy" onLoad={() => imgload()} />
+                <img className="mainimg" ref={imgRef} src={optimisedImage} onLoad={() => setLoaded(true)} />
 
             </div>
             <div className="images-c flex">
