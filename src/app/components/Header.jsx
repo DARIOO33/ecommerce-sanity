@@ -93,7 +93,7 @@ export default function Header(params) {
         }
     }
     const searchClick = () => {
-        if (searchinput) {
+        if (searchinput.length > 0) {
 
             router.push(`/search?keyword=${searchinput}`)
             setLoading(true)
@@ -138,19 +138,16 @@ export default function Header(params) {
                         <div className="search-bar w-5/12 bg-white h-14 flex items-center rounded-full px-4 justify-between" >
 
                             <input className="text-lg  font-normal " maxLength={35} type="text" placeholder="Search everything at FlexStar" value={searchinput} onChange={(e) => setSearchinput(e.target.value)} onKeyDown={(e) => handleSearchInputKeyPress(e)} />
-                            <Link href={{
-                                pathname: "/search",
-                                query: {
-                                    keyword: searchinput,
-                                }
-                            }}>
-                                <div className="icon cursor-pointer" onClick={() => setLoading(true)} ><AiOutlineSearch /></div>
-                            </Link>
+
+                            <div className="icon cursor-pointer" onClick={() => searchClick()} ><AiOutlineSearch /></div>
+
 
                         </div>
                         <div className="infos flex mr-8 cursor-pointer">
                             <HeaderDetail smalltext={" "} bigtext={"Account"} icon={<HiOutlineUser />} />
-                            <HeaderDetail smalltext={"(" + orders.length + ")"} bigtext={"orders"} icon={<BiShoppingBag />} />
+                            <div onClick={() => setLoading(true)}>
+                                <HeaderDetail smalltext={"(" + orders.length + ")"} bigtext={"orders"} icon={<BiShoppingBag />} />
+                            </div>
                             <HeaderDetail smalltext={""} bigtext={"Cart"} icon={<BsCart4 />} />
 
                         </div>
