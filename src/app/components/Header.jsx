@@ -65,7 +65,7 @@ export default function Header(params) {
     const pathname = usePathname()
     const searchParams = useSearchParams()
     let search = searchParams.get('keyword') || ""
-    console.log(search);
+
     useEffect(() => {
         search.length > 0 ?
             setSearchinput(search)

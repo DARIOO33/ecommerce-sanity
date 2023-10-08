@@ -1,5 +1,6 @@
 "use client"
 import "./product.css"
+import Image from 'next/image'
 
 import { Suspense, useEffect, useRef, useState } from "react"
 
@@ -12,31 +13,41 @@ export default function ProductImage({ image1, image2 }) {
         return optimisedImage
     }
     const [loaded, setLoaded] = useState(false)
-    const optimisedImage = optimiseYourImage(image1, 50)
+
     const clickimng1 = optimiseYourImage(image1, 100)
     const clickimng2 = optimiseYourImage(image2, 100)
-    const imgRef = useRef(null)
+    const imgRef = useRef(null);
+
     const setImgPreview = (url) => {
-        setLoaded(true)
-        console.log("Loaded");
-        imgRef.current.src = url
-    }
+        if (imgRef.current) {
+            imgRef.current.src = url;
+            console.log(imgRef);
+            setLoaded(false); // Trigger a re-render
+        }
+    };
     useEffect(() => {
-        setImgPreview(image1)
+
+        console.log("Loaded")
+
     }, [loaded])
 
-
+    const handleImageLoad = () => {
+        setLoaded(true);
+    };
 
     return (
         <div className="product-images  ">
             <div className={loaded ? "product-img loaded" : "product-img"} >
-
-                <img className="mainimg" ref={imgRef} src={optimisedImage} onLoad={() => setLoaded(true)} />
-
+                <img
+                    ref={imgRef}
+                    src={optimiseYourImage(image1, 700)}
+                    alt="Picture of the author"
+                    onLoad={handleImageLoad}
+                />
             </div>
             <div className="images-c flex">
-                <img src={clickimng1} onClick={() => setImgPreview(image1)} />
-                <img src={clickimng2} onClick={() => setImgPreview(image2)} />
+                <Image width={100} height={100} src={clickimng1} onClick={() => setImgPreview(optimiseYourImage(image1, 600))} />
+                <Image width={100} height={100} src={clickimng2} onClick={() => setImgPreview(optimiseYourImage(image2, 600))} />
             </div>
         </div>
     )
