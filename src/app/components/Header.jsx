@@ -116,6 +116,11 @@ export default function Header(params) {
     useEffect(() => {
         setLoading(false)
     }, [searchParams])
+
+    function checkLoading() {
+        if (pathname == "/") return
+        setLoading(true)
+    }
     return (
         <div >
             {loading && <Loading />}
@@ -127,7 +132,7 @@ export default function Header(params) {
                         <div className="title laptop:text-4xl  text-white font-bold cursor-pointer w-2/12 text-center">
                             <Link href={{
                                 pathname: "/"
-                            }} onClick={() => setLoading(true)}>
+                            }} onClick={() => checkLoading()}>
                                 FlexStar
                             </Link>
                         </div>
@@ -155,7 +160,7 @@ export default function Header(params) {
                         <div className="text ">
                             <Link href={{
                                 pathname: "/"
-                            }} onClick={() => setLoading(true)}>
+                            }} onClick={() => checkLoading()}>
                                 <div className="title text-2xl text-white font-bold cursor-pointer w-2/12 text-center">FlexStar</div>
                             </Link>
                             <p className="text-white font-light headline">Search everything at FlexStar</p>

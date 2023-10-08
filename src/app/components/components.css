@@ -127,6 +127,25 @@ footer {
 
 
 
+ul li a::after {
+    content: "";
+    width: 0;
+    height: .175rem;
+    background: #2ab1ba;
+    margin: auto;
+    margin-top: .5vh;
+    display: flex;
+}
+
+ul li a:hover::after {
+    width: 100%;
+    transition: .4s;
+}
+
+
+
+
+
 .buttons-container svg:hover {
     opacity: 1;
 }
