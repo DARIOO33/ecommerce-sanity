@@ -136,7 +136,7 @@ footer {
     align-items: center;
     scroll-behavior: smooth;
     /* border: 1px solid red; */
-    cursor: pointer;
+    /* cursor: pointer; */
     width: auto;
     overflow: hidden;
 

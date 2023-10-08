@@ -10,12 +10,14 @@ export default async function Home() {
   return (
     <div >
 
-      <Offers type={"Top Offers"} />
-      <FeaturedBrands />
-      <Offers type={"Weekly deals"} />
-      <BrowseCategories />
-      <Offers type={"Feautured Products"} />
+      <div key={Math.random()} className="SearchResults">
+        <Offers type={"Top Offers"} />
+        <FeaturedBrands />
+        <Offers type={"Weekly deals"} />
+        <BrowseCategories />
+        <Offers type={"Feautured Products"} />
 
+      </div>
     </div>
   )
 }

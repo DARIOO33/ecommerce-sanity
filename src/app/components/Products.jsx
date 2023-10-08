@@ -1,3 +1,4 @@
+import CatalogContainer from "./CatalogContainer";
 import Product from "./Product";
 import Scroll from "./Scroll";
 import "./components.css"
@@ -46,20 +47,7 @@ export default async function Products({ type, categorie, currentpostid }) {
                 <div></div>
             }
             <div className="catalog-container  mt-10  pb-6">
-                {filtredProducts.map((product => (
-
-
-                    product._id == currentpostid.id ?
-                        <div key={"test"} className="hidden"></div>
-                        :
-                        <Product
-                            key={product._id}
-                            id={product._id}
-                            imageUrl={product.imageLink.image1}
-                            ProductName={product.product_name}
-                            price={(product.product_price) - ((product.product_price) * (percentToInt(product.discount) / 100))}
-                            discount={product.discount} />
-                )))}
+                <CatalogContainer filtredProducts={filtredProducts} currentpostid={currentpostid} />
             </div>
 
 

@@ -87,6 +87,11 @@ export default function Header(params) {
         setActiveMenu(!activeMenu);
 
     }
+    const handleSearchInputKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            searchClick()
+        }
+    }
     const searchClick = () => {
         if (searchinput) {
 
@@ -114,7 +119,7 @@ export default function Header(params) {
                         </div>
                         <div className="search-bar w-5/12 bg-white h-14 flex items-center rounded-full px-4 justify-between" >
 
-                            <input className="text-lg  font-normal " maxLength={35} type="text" placeholder="Search everything at FlexStar" value={searchinput} onChange={(e) => setSearchinput(e.target.value)} />
+                            <input className="text-lg  font-normal " maxLength={35} type="text" placeholder="Search everything at FlexStar" value={searchinput} onChange={(e) => setSearchinput(e.target.value)} onKeyDown={(e) => handleSearchInputKeyPress(e)} />
                             <Link href={{
                                 pathname: "/search",
                                 query: {

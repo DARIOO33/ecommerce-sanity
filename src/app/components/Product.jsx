@@ -5,11 +5,17 @@ import Tag from "./Tag"
 import Link from "next/link"
 import Rating from '@mui/material/Rating';
 import Image from "next/image"
-export default function Product({ id, imageUrl, ProductName, price, discount }) {
+import Loading from "./loading"
+import { usePathname } from "next/navigation"
+import { Suspense, useState } from "react"
+export default function Product({ id, imageUrl, ProductName, price, discount, loading, setLoading }) {
     const router = useRouter()
+    const path = usePathname()
+    console.log(path);
     let discountNumber;
     discount.length > 2 ? discountNumber = discount.substr(0, 2) : discountNumber = discount.substr(0, 1)
     return (
+
         <div className="h-full">
 
             <div className="card mr-8">
@@ -19,7 +25,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         id: id,
                     }
                 }}>
-                    <div className="product-image bg-gray-200 w-full flex justify-center ">
+                    <div className="product-image bg-gray-200 w-full flex justify-center " onClick={() => setLoading(true)}>
 
                         <Image
                             alt=""
@@ -39,7 +45,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                         }
                     }}>
 
-                        <span className="cursor-pointer " >
+                        <span className="cursor-pointer " onClick={() => setLoading(true)}>
                             {ProductName}
                         </span>
 
@@ -79,7 +85,7 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                             },
                             shallow: true
                         }}>
-                            <button className="rounded-full laptop:text-xl mobile:text-xs    slide text-blue-800 cursor-pointer" >
+                            <button onClick={() => setLoading(true)} className="rounded-full laptop:text-xl mobile:text-xs slide text-blue-800 cursor-pointer" >
                                 See Details
                             </button>
                         </Link>
@@ -88,6 +94,5 @@ export default function Product({ id, imageUrl, ProductName, price, discount }) 
                 </div>
             </div>
         </div>
-
     )
 };

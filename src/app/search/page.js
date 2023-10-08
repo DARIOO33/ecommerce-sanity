@@ -2,9 +2,7 @@ import Products from "../components/Products";
 import SmallHeader from "../components/SmallHeader";
 import { getPosts } from "@/sanity/sanity.query";
 import "./search.css"
-import Product from "../components/Product";
 import { Suspense } from "react";
-import LoadingProduct from "../components/LoadingProduct"
 import FiltredProducts from "./FiltredProducts";
 
 export default async function page(params) {
