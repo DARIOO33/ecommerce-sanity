@@ -19,35 +19,38 @@ export default function ProductImage({ image1, image2 }) {
     const imgRef = useRef(null);
 
     const setImgPreview = (url) => {
-        if (imgRef.current) {
-            imgRef.current.src = url;
-            console.log(imgRef);
-            setLoaded(false); // Trigger a re-render
-        }
+        imgRef.current.src = url;
     };
+
+    function onload() {
+        setLoaded(true)
+    }
+
+    const oimage1 = optimiseYourImage(image1, 400)
+    const oimage2 = optimiseYourImage(image2, 400)
     useEffect(() => {
 
-        console.log("Loaded")
+        setImgPreview(oimage1)
 
     }, [loaded])
 
-    const handleImageLoad = () => {
-        setLoaded(true);
-    };
+
+    const loadimage = optimiseYourImage(image1, 50)
+
 
     return (
         <div className="product-images  ">
-            <div className={loaded ? "product-img loaded" : "product-img"} >
+            <div className={loaded ? "product-img " : "product-img"} >
                 <img
                     ref={imgRef}
-                    src={optimiseYourImage(image1, 700)}
+                    src={loadimage}
                     alt="Picture of the author"
-                    onLoad={handleImageLoad}
+                    onLoad={() => onload()}
                 />
             </div>
             <div className="images-c flex">
-                <Image width={100} height={100} src={clickimng1} onClick={() => setImgPreview(optimiseYourImage(image1, 600))} />
-                <Image width={100} height={100} src={clickimng2} onClick={() => setImgPreview(optimiseYourImage(image2, 600))} />
+                <Image width={100} height={100} src={clickimng1} alt="test" onClick={() => setImgPreview(oimage1)} />
+                <Image width={100} height={100} src={clickimng2} alt="test" onClick={() => setImgPreview(oimage2)} />
             </div>
         </div>
     )

@@ -24,7 +24,6 @@ export default function Header(params) {
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
 
-            // console.log(currentScrollPos);
             if (currentScrollPos > prevScrollPos) {
                 setIsSticky(false);
             } else {

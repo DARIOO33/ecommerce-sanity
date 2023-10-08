@@ -11,7 +11,6 @@ import { Suspense, useState } from "react"
 export default function Product({ id, imageUrl, ProductName, price, discount, loading, setLoading }) {
     const router = useRouter()
     const path = usePathname()
-    console.log(path);
     let discountNumber;
     discount.length > 2 ? discountNumber = discount.substr(0, 2) : discountNumber = discount.substr(0, 1)
     return (
