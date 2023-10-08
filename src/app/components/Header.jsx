@@ -14,11 +14,11 @@ import { usePathname } from "next/navigation";
 import { useSearchParams } from 'next/navigation'
 import { useContext } from "react";
 import CartContext from "@/context/CartContext";
-
+import Loading from "./loading";
 export default function Header(params) {
     const [isSticky, setIsSticky] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
-
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -89,6 +89,7 @@ export default function Header(params) {
     }
     const handleSearchInputKeyPress = (event) => {
         if (event.key === 'Enter') {
+            setLoading(true)
             searchClick()
         }
     }
@@ -96,6 +97,8 @@ export default function Header(params) {
         if (searchinput) {
 
             router.push(`/search?keyword=${searchinput}`)
+            setLoading(true)
+
             setTimeout(() => {
 
                 setActive(!active);
@@ -105,15 +108,26 @@ export default function Header(params) {
             alert("type somnething to search please")
         }
     }
+    function twoInOne() {
+        setLoading(true)
+        activeClick()
+
+    }
+    useEffect(() => {
+        setLoading(false)
+    }, [searchParams])
     return (
         <div >
+            {loading && <Loading />}
             {!pathname.includes("studio") ?
                 <div>
 
                     <header className={` ${isSticky ? 'sticky ' : ''} pcheader justify-between items-center`}>
 
                         <div className="title laptop:text-4xl  text-white font-bold cursor-pointer w-2/12 text-center">
-                            <Link href={"/"}>
+                            <Link href={{
+                                pathname: "/"
+                            }} onClick={() => setLoading(true)}>
                                 FlexStar
                             </Link>
                         </div>
@@ -126,7 +140,7 @@ export default function Header(params) {
                                     keyword: searchinput,
                                 }
                             }}>
-                                <div className="icon cursor-pointer" ><AiOutlineSearch /></div>
+                                <div className="icon cursor-pointer" onClick={() => setLoading(true)} ><AiOutlineSearch /></div>
                             </Link>
 
                         </div>
@@ -139,7 +153,9 @@ export default function Header(params) {
                     </header>
                     <header className="mobileheader items-center justify-between">
                         <div className="text ">
-                            <Link href={"/"}>
+                            <Link href={{
+                                pathname: "/"
+                            }} onClick={() => setLoading(true)}>
                                 <div className="title text-2xl text-white font-bold cursor-pointer w-2/12 text-center">FlexStar</div>
                             </Link>
                             <p className="text-white font-light headline">Search everything at FlexStar</p>
