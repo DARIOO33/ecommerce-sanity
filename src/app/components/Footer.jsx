@@ -12,9 +12,9 @@ export default function Footer(params) {
     ]
     return (
         <footer className="  py-8 pt-16">
-            <div className="footer-content flex justify-between">
+            <div className="footer-content laptop:flex  justify-between">
 
-                <div className="informations1 w-5/12 ">
+                <div className="informations1 laptop:w-5/12 mobile:w-11/12 mobile:m-auto ">
                     <div className="list-container flex justify-between">
 
                         <FooterList title={companyinfo[0]} e1={companyinfo[1]} e2={companyinfo[2]} e3={companyinfo[3]} e4={companyinfo[4]} />
@@ -25,7 +25,15 @@ export default function Footer(params) {
 
                 </div>
                 <div className="informations2  w-5/12">
-                    <h1 className="text-white">Test</h1>
+                    <div className="platforms flex justify-between">
+                        <div className="socials">
+                            <h1 className="text-white font-bold">Socials</h1>
+                        </div>
+                        <div className="apps">
+                            <h1 className="text-white font-bold">Platforms</h1>
+
+                        </div>
+                    </div>
 
                 </div>
             </div>

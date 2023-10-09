@@ -5,11 +5,11 @@ export default function FooterList({ title, e1, e2, e3, e4, e5 }) {
                 {title}
             </div>
             <ul>
-                <li className="mt-1.5"><a href="/" className="text-white">{e1}</a></li>
-                <li className="mt-1.5"><a href="/" className="text-white">{e2}</a></li>
-                <li className="mt-1.5"><a href="/" className="text-white">{e3}</a></li>
-                <li className="mt-1.5"><a href="/" className="text-white">{e4}</a></li>
-                <li className="mt-1.5"><a href="/" className="text-white">{e5}</a></li>
+                <li className="mt-1.5"><a href="/" className="text-white mobile:text-sm laptop:text-base">{e1}</a></li>
+                <li className="mt-1.5"><a href="/" className="text-white mobile:text-sm laptop:text-base">{e2}</a></li>
+                <li className="mt-1.5"><a href="/" className="text-white mobile:text-sm laptop:text-base ">{e3}</a></li>
+                <li className="mt-1.5"><a href="/" className="text-white text-sm  laptop:text-base">{e4}</a></li>
+                <li className="mt-1.5"><a href="/" className="text-white  laptop:text-base ">{e5}</a></li>
             </ul>
         </div>
     )
