@@ -36,6 +36,10 @@ footer {
 
 }
 
+.product-title {
+    min-height: 6rem;
+}
+
 .Top {
     font-size: 2rem;
 }

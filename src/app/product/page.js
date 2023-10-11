@@ -19,6 +19,12 @@ export default async function page(params) {
         str.length > 2 ? discountNumber = str.substr(0, 2) : discountNumber = str.substr(0, 1)
         return discountNumber
     }
+    function percentToInt(discount) {
+        if (discount == "") return 0
+        let discountNumber;
+        discount.length > 2 ? discountNumber = discount.substr(0, 2) : discountNumber = discount.substr(0, 1)
+        return Number(discountNumber)
+    }
 
     return (
         <div>
@@ -33,7 +39,7 @@ export default async function page(params) {
                             <div className="pr-details">
                                 <h1 className="text-3xl font-bold">{product.product_name}</h1>
                                 <div className="mobile:mt-3 price laptop:text-2xl mobile:text-4xl font-bold">
-                                    ${(product.product_price).toFixed(2)}
+                                    ${((product.product_price) - ((product.product_price) * (percentToInt(product.discount) / 100))).toFixed(2)}
                                 </div>
                                 <div className="flex items-center mt-2">
                                     <Rating name="read-only" value={5} readOnly />

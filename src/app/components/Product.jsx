@@ -45,7 +45,12 @@ export default function Product({ id, imageUrl, ProductName, price, discount, lo
                     }}>
 
                         <span className="cursor-pointer " onClick={() => setLoading(true)}>
-                            {ProductName}
+                            {ProductName.substring(0, 50)}
+                            {ProductName.length > 50 ?
+                                <span>...</span>
+                                :
+                                <span></span>
+                            }
                         </span>
 
                     </Link>
