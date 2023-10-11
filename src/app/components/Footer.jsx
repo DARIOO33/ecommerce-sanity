@@ -1,5 +1,14 @@
 import FooterList from "./FooterList"
 import "./components.css"
+import Link from "next/link"
+import { FaFacebook } from "react-icons/fa6";
+import { FaSquareTwitter } from "react-icons/fa6";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa6";
+import { FaSquareSnapchat } from "react-icons/fa6";
+import { DiAndroid } from "react-icons/di";
+import { DiApple } from "react-icons/di";
+
 export default function Footer(params) {
     const companyinfo = [
         "Company info", "About Laura's Closet", "Scoial Responsibility", "Affiliate", "Fashion Blogger"
@@ -26,12 +35,32 @@ export default function Footer(params) {
                 </div>
                 <div className="informations2  w-5/12">
                     <div className="platforms flex justify-between">
-                        <div className="socials">
+                        <div className="socials w-7/12">
                             <h1 className="text-white font-bold">Socials</h1>
-                        </div>
-                        <div className="apps">
-                            <h1 className="text-white font-bold">Platforms</h1>
+                            <div className="social-icons w-3/4 flex mt-4 justify-between">
+                                <Link href={"https://www.facebook.com/profile.php?id=100085432064449"} target="_blank">
+                                    <FaFacebook />
+                                </Link>
 
+                                <FaSquareTwitter />
+                                <Link href={"https://www.instagram.com/esmi_dario/"} target="_blank">
+
+                                    <FaSquareInstagram />
+                                </Link>
+
+                                <FaTiktok />
+                                <FaSquareSnapchat />
+
+
+                            </div>
+                        </div>
+                        <div className="apps w-5/12">
+                            <h1 className="text-white font-bold">Platforms</h1>
+                            <div className="platforms-icons flex mt-4 justify-between w-1/3">
+
+                                <DiAndroid />
+                                <DiApple />
+                            </div>
                         </div>
                     </div>
 

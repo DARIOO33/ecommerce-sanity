@@ -142,6 +142,23 @@ ul li a:hover::after {
     transition: .4s;
 }
 
+.social-icons svg,
+.platforms-icons svg {
+    transition: 0.3s ease;
+    cursor: pointer;
+    color: white;
+    font-size: 1.65rem;
+}
+
+.platforms-icons svg {
+    font-size: 1.7rem;
+}
+
+
+.social-icons svg:hover,
+.platforms-icons svg:hover {
+    transform: scale(1.3);
+}
 
 
 

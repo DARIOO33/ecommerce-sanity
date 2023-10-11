@@ -88,11 +88,12 @@ export default function Header(params) {
     }
     const handleSearchInputKeyPress = (event) => {
         if (event.key === 'Enter') {
-            setLoading(true)
+
             searchClick()
         }
     }
     const searchClick = () => {
+        if (searchinput == search) return
         if (searchinput.length > 0) {
 
             router.push(`/search?keyword=${searchinput}`)
@@ -102,6 +103,7 @@ export default function Header(params) {
 
                 setActive(!active);
             }, 500);
+
         }
         else {
             alert("type somnething to search please")
@@ -116,8 +118,8 @@ export default function Header(params) {
         setLoading(false)
     }, [searchParams])
 
-    function checkLoading() {
-        if (pathname == "/") return
+    function checkLoading(param) {
+        if (pathname == param) return
         setLoading(true)
     }
     return (
@@ -131,7 +133,7 @@ export default function Header(params) {
                         <div className="title laptop:text-4xl  text-white font-bold cursor-pointer w-2/12 text-center">
                             <Link href={{
                                 pathname: "/"
-                            }} onClick={() => checkLoading()}>
+                            }} onClick={() => checkLoading("/")}>
                                 FlexStar
                             </Link>
                         </div>
@@ -145,7 +147,7 @@ export default function Header(params) {
                         </div>
                         <div className="infos flex mr-8 cursor-pointer">
                             <HeaderDetail smalltext={" "} bigtext={"Account"} icon={<HiOutlineUser />} />
-                            <div onClick={() => setLoading(true)}>
+                            <div onClick={() => checkLoading("/orders")}>
                                 <HeaderDetail smalltext={"(" + orders.length + ")"} bigtext={"orders"} icon={<BiShoppingBag />} />
                             </div>
                             <HeaderDetail smalltext={""} bigtext={"Cart"} icon={<BsCart4 />} />
@@ -156,7 +158,7 @@ export default function Header(params) {
                         <div className="text ">
                             <Link href={{
                                 pathname: "/"
-                            }} onClick={() => checkLoading()}>
+                            }} onClick={() => checkLoading("/")}>
                                 <div className="title text-2xl text-white font-bold cursor-pointer w-2/12 text-center">FlexStar</div>
                             </Link>
                             <p className="text-white font-light headline">Search everything at FlexStar</p>
@@ -212,7 +214,7 @@ export default function Header(params) {
                                         <BiShoppingBag />
                                     </div>
                                     <div>
-                                        <a href="/orders">
+                                        <a href="/orders" >
 
                                             <p className="font-bold text-4xl text-white w-48 text-center"> Orders </p>
                                         </a>
