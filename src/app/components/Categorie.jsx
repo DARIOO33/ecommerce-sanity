@@ -7,11 +7,18 @@ export default function Categorie({ name, imgsrc }) {
     return (
         <div className="relative mx-8">
             <div className="imageC    cursor-pointer ">
-                <Image
-                    alt="Test"
-                    src={imgsrc}
-                    width={200}
-                    height={200} />
+                <Link href={{
+                    pathname: "/categorie",
+                    query: {
+                        name: `${name.toLowerCase()}`,
+                    }
+                }}>
+                    <Image
+                        alt="Test"
+                        src={imgsrc}
+                        width={200}
+                        height={200} />
+                </Link>
             </div>
             <Link href={{
                 pathname: "/categorie",
