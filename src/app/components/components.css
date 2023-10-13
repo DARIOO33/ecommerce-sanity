@@ -284,6 +284,11 @@ ul li a:hover::after {
 
 
 @media screen and (max-width:1000px) {
+    ul li a:hover::after {
+        width: 16%;
+        transition: .4s;
+    }
+
     .buttons-container {
         display: none;
     }

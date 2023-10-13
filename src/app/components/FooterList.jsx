@@ -1,6 +1,6 @@
 export default function FooterList({ title, e1, e2, e3, e4, e5 }) {
     return (
-        <div className="list">
+        <div className="list laptop:my-0 mobile:my-8">
             <div className="pb-2 listtitle text-white font-bold ">
                 {title}
             </div>

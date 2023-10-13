@@ -20,11 +20,11 @@ export default function Footer(params) {
         "customer care", "Contact Us", "Payment", "Bonus Point", "Notices"
     ]
     return (
-        <footer className="  py-8 pt-16">
+        <footer className="  laptop:py-12 mobile:py-2">
             <div className="footer-content laptop:flex  justify-between">
 
                 <div className="informations1 laptop:w-5/12 mobile:w-11/12 mobile:m-auto ">
-                    <div className="list-container flex justify-between">
+                    <div className="list-container mobile:text-center laptop:text-left laptop:flex mobile:block justify-between">
 
                         <FooterList title={companyinfo[0]} e1={companyinfo[1]} e2={companyinfo[2]} e3={companyinfo[3]} e4={companyinfo[4]} />
                         <FooterList title={help[0]} e1={help[1]} e2={help[2]} e3={help[3]} e4={help[4]} e5={help[5]} />
@@ -33,11 +33,11 @@ export default function Footer(params) {
                     </div>
 
                 </div>
-                <div className="informations2  w-5/12">
-                    <div className="platforms flex justify-between">
-                        <div className="socials w-7/12">
-                            <h1 className="text-white font-bold">Socials</h1>
-                            <div className="social-icons w-3/4 flex mt-4 justify-between">
+                <div className="informations2  laptop:w-5/12 mobile:w-full  ">
+                    <div className="platforms laptop:flex mobile:block justify-between">
+                        <div className="socials mobile:w-1/2 mobile:m-auto mobile:text-center laptop:text-left laptop:w-7/12 ">
+                            <h1 className="text-white font-bold laptop:mt-0 mobile:mt-6">Socials</h1>
+                            <div className="social-icons w-3/4 mobile:mt-4 mobile:m-auto laptop:mt-4 laptop:mx-0 flex justify-between">
                                 <Link href={"https://www.facebook.com/profile.php?id=100085432064449"} target="_blank">
                                     <FaFacebook />
                                 </Link>
@@ -54,9 +54,9 @@ export default function Footer(params) {
 
                             </div>
                         </div>
-                        <div className="apps w-5/12">
-                            <h1 className="text-white font-bold">Platforms</h1>
-                            <div className="platforms-icons flex mt-4 justify-between w-1/3">
+                        <div className="apps mobile:w-1/2 mobile:m-auto mobile:text-center laptop:text-left laptop:w-7/12  w-5/12">
+                            <h1 className="text-white font-bold laptop:mt-0 mobile:mt-6">Platforms</h1>
+                            <div className="platforms-icons mobile:mt-4 mobile:m-auto laptop:mt-4 laptop:mx-0 flex mt-4 justify-evenly w-1/3">
 
                                 <DiAndroid />
                                 <DiApple />

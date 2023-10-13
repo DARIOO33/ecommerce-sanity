@@ -47,7 +47,12 @@ export default function Items(params) {
                                     src={optimiseYourImage(order.image, 150)} />
                             </div>
                             <div className="p-details laptop:w-2/4 mobile:w-full justify-evenly  px-5 flex mt-1.5 mobile:text-center laptop:text-left ">
-                                <h1 className="font-semibold text-sm">{order.name}</h1>
+                                {order.name.length < 40 ?
+                                    <h1 className="font-semibold text-sm">{order.name}</h1>
+                                    :
+                                    <h1 className="font-semibold text-sm">{order.name.substring(0, 39)}...</h1>
+
+                                }
                                 <div className=" mobile:m-auto laptop:m-0">
 
                                     {order.discount.length > 1
