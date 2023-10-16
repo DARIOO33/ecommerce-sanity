@@ -147,9 +147,7 @@ export default function Header(params) {
                         </div>
                         <div className="infos flex mr-8 cursor-pointer">
                             <HeaderDetail smalltext={" "} bigtext={"Account"} icon={<HiOutlineUser />} />
-                            <div onClick={() => checkLoading("/orders")}>
-                                <HeaderDetail smalltext={"(" + orders.length + ")"} bigtext={"orders"} icon={<BiShoppingBag />} />
-                            </div>
+                            <HeaderDetail smalltext={"(" + orders.length + ")"} bigtext={"orders"} icon={<BiShoppingBag />} />
                             <HeaderDetail smalltext={""} bigtext={"Cart"} icon={<BsCart4 />} />
 
                         </div>
